@@ -60,7 +60,7 @@ export default async function BookingPage({
                 1
               </div>
               <span className="font-label text-label text-primary-container uppercase">
-                Guest Details
+                Thông tin khách
               </span>
             </div>
             <div className="relative z-10 flex flex-col items-center">
@@ -68,7 +68,7 @@ export default async function BookingPage({
                 2
               </div>
               <span className="font-label text-label text-on-surface-variant uppercase">
-                Payment
+                Thanh toán
               </span>
             </div>
             <div className="relative z-10 flex flex-col items-center">
@@ -76,7 +76,7 @@ export default async function BookingPage({
                 3
               </div>
               <span className="font-label text-label text-on-surface-variant uppercase">
-                Confirmation
+                Xác nhận
               </span>
             </div>
           </div>

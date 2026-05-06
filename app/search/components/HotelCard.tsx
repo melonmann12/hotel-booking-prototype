@@ -6,6 +6,7 @@ interface HotelCardProps {
   id: string;
   title: string;
   location: string;
+  stars: number;
   rating: string | number;
   ratingLabel: string;
   reviews: string;
@@ -18,6 +19,7 @@ export default function HotelCard({
   id,
   title,
   location,
+  stars,
   rating,
   ratingLabel,
   reviews,
@@ -42,7 +44,7 @@ export default function HotelCard({
             <div>
               <h3 className="font-h2 text-primary">{title}</h3>
               <div className="flex items-center gap-xs text-primary mb-xs">
-                {[...Array(5)].map((_, i) => (
+                {[...Array(stars)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-primary" />
                 ))}
               </div>
@@ -52,7 +54,8 @@ export default function HotelCard({
             </div>
             <div className="text-right">
               <div className="bg-primary text-on-primary font-button px-sm py-xs rounded-DEFAULT inline-block mb-xs">
-                {rating} {ratingLabel}
+                {/* {rating} {ratingLabel} */}
+                {rating}
               </div>
               <p className="font-body-sm text-on-surface-variant">{reviews}</p>
             </div>
@@ -70,14 +73,14 @@ export default function HotelCard({
         </div>
         <div className="flex justify-between items-end mt-md border-t border-outline-variant/30 pt-md">
           <div>
-            <p className="font-body-sm text-on-surface-variant">Price for 30 nights</p>
-            <p className="font-h1 text-primary">{price}</p>
+            <p className="font-body-sm text-on-surface-variant">Giá cho 1 đêm</p>
+            <p className="font-h1 text-primary font-bold">{price}</p>
           </div>
           <Link
             href={`/hotel/${id}`}
             className="bg-primary text-on-primary font-button px-lg py-md rounded-DEFAULT hover:opacity-90 transition-opacity"
           >
-            View Deal
+            Xem ưu đãi
           </Link>
         </div>
       </div>

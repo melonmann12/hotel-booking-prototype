@@ -7,9 +7,9 @@ export default function FilterSidebar() {
       <div className="border border-primary rounded-lg p-md bg-surface-container-lowest">
         <div className="flex justify-between items-center">
           <div>
-            <h3 className="font-h3 text-primary">Price Alert</h3>
+            <h3 className="font-h3 text-primary">Thông báo giá</h3>
             <p className="font-body-sm text-on-surface-variant">
-              Get notified when prices drop.
+              Nhận thông báo khi giá giảm.
             </p>
           </div>
           <label className="relative inline-flex items-center cursor-pointer">
@@ -21,9 +21,9 @@ export default function FilterSidebar() {
 
       {/* Smart Filters */}
       <div className="border-t border-outline-variant/30 pt-md">
-        <h4 className="font-h3 text-primary mb-sm">Smart Filters</h4>
+        <h4 className="font-h3 text-primary mb-sm">Bộ lọc thông minh</h4>
         <div className="space-y-sm">
-          {["Free Cancellation", "Breakfast Included"].map((filter) => (
+          {["Miễn phí hủy phòng", "Bao gồm bữa sáng"].map((filter) => (
             <label key={filter} className="flex items-center gap-sm cursor-pointer group">
               <input
                 type="checkbox"
@@ -39,7 +39,7 @@ export default function FilterSidebar() {
 
       {/* Star Rating */}
       <div className="border-t border-outline-variant/30 pt-md">
-        <h4 className="font-h3 text-primary mb-sm">Star Rating</h4>
+        <h4 className="font-h3 text-primary mb-sm">Xếp hạng sao</h4>
         <div className="space-y-sm">
           {[5, 4, 3].map((rating) => (
             <label key={rating} className="flex items-center gap-sm cursor-pointer group">
@@ -57,7 +57,7 @@ export default function FilterSidebar() {
 
       {/* Neighborhoods */}
       <div className="border-t border-outline-variant/30 pt-md">
-        <h4 className="font-h3 text-primary mb-sm">Neighborhoods</h4>
+        <h4 className="font-h3 text-primary mb-sm">Khu vực</h4>
         <div className="space-y-sm">
           {["Brera", "Navigli", "Centro Storico"].map((neighborhood) => (
             <label
@@ -78,9 +78,9 @@ export default function FilterSidebar() {
 
       {/* Amenities */}
       <div className="border-t border-outline-variant/30 pt-md">
-        <h4 className="font-h3 text-primary mb-sm">Amenities</h4>
+        <h4 className="font-h3 text-primary mb-sm">Tiện nghi</h4>
         <div className="space-y-sm">
-          {["Swimming Pool", "Free Wi-Fi", "Fitness Center", "Parking"].map(
+          {["Hồ bơi", "Wi-Fi miễn phí", "Phòng gym", "Bãi đậu xe"].map(
             (amenity) => (
               <label key={amenity} className="flex items-center gap-sm cursor-pointer group">
                 <input

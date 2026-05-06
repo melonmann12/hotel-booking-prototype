@@ -4,8 +4,9 @@ import Link from "next/link";
 
 
 import hotelsData from "../data/hotels.json";
+import { formatCurrency } from "@/lib/format";
 
-const categories = ["All", "Apartment", "Resort", "Lodge", "Hotel"];
+const categories = ["Tất cả", "Căn hộ", "Khu nghỉ dưỡng", "Nhà nghỉ", "Khách sạn"];
 
 export default function Home() {
   return (
@@ -28,32 +29,32 @@ export default function Home() {
             <div className="bg-surface-container-lowest rounded-full p-sm flex flex-col md:flex-row items-center w-full max-w-4xl shadow-md border border-primary/10">
               <div className="flex-1 w-full md:w-auto px-lg py-sm border-b md:border-b-0 md:border-r border-outline-variant/30">
                 <label className="block font-label text-label text-on-surface-variant mb-xs">
-                  Where to
+                  Điểm đến
                 </label>
                 <input
                   className="w-full bg-transparent border-none p-0 focus:ring-0 font-body-lg text-body-lg text-primary placeholder-on-surface-variant/50 outline-none"
-                  placeholder="Search destinations"
+                  placeholder="Tìm điểm đến"
                   type="text"
                 />
               </div>
               <div className="flex-1 w-full md:w-auto px-lg py-sm border-b md:border-b-0 md:border-r border-outline-variant/30">
                 <label className="block font-label text-label text-on-surface-variant mb-xs">
-                  Date
+                  Ngày
                 </label>
                 <input
                   className="w-full bg-transparent border-none p-0 focus:ring-0 font-body-lg text-body-lg text-primary placeholder-on-surface-variant/50 outline-none"
-                  placeholder="Add dates"
+                  placeholder="Thêm ngày"
                   type="text"
                 />
               </div>
               <div className="flex-1 w-full md:w-auto px-lg py-sm flex items-center justify-between">
                 <div>
                   <label className="block font-label text-label text-on-surface-variant mb-xs">
-                    Who
+                    Khách
                   </label>
                   <input
                     className="w-full bg-transparent border-none p-0 focus:ring-0 font-body-lg text-body-lg text-primary placeholder-on-surface-variant/50 outline-none"
-                    placeholder="Add guests"
+                    placeholder="Thêm khách"
                     type="text"
                   />
                 </div>
@@ -68,7 +69,7 @@ export default function Home() {
         <section className="w-full max-w-container-max mx-auto px-gutter py-xxl flex flex-col gap-xl">
           <div className="flex flex-col gap-md">
             <h1 className="font-h1 text-h1 text-primary">
-              Where Comfort Meets Convenience
+              Nơi sự thoải mái hội tụ cùng tiện nghi
             </h1>
             <div className="flex flex-wrap gap-sm">
               {categories.map((category, index) => (
@@ -134,19 +135,19 @@ export default function Home() {
                   </p>
                   <div className="flex flex-wrap gap-xs mt-auto pt-sm">
                     <span className="border border-[#0F172A] text-primary px-sm py-xs rounded text-[10px] font-semibold tracking-wider uppercase">
-                      {hotel.rooms[0]?.capacity || 2} Guests
+                      {hotel.rooms[0]?.capacity || 2} Khách
                     </span>
                     <span className="border border-[#0F172A] text-primary px-sm py-xs rounded text-[10px] font-semibold tracking-wider uppercase">
-                      {hotel.rooms[0]?.bedInfo || "1 Bed"}
+                      {hotel.rooms[0]?.bedInfo || "1 Giường"}
                     </span>
                   </div>
                   <div className="mt-sm pt-sm border-t border-outline-variant/20 flex justify-between items-end">
                     <div>
-                      <span className="font-h3 text-h3 text-primary">
-                        {hotel.currency}{hotel.startingPrice}
+                      <span className="font-h3 text-h3 text-primary font-bold">
+                        {formatCurrency(hotel.startingPrice)}
                       </span>
-                      <span className="font-body-sm text-body-sm text-on-surface-variant">
-                        /night
+                      <span className="font-body-sm text-body-sm text-on-surface-variant ml-1">
+                        /đêm
                       </span>
                     </div>
                   </div>

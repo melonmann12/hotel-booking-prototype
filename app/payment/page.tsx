@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, X, CreditCard, Lock } from "lucide-react";
+import { formatCurrency } from "@/lib/format";
 
 export default function PaymentPage() {
   const router = useRouter();
@@ -76,19 +77,19 @@ export default function PaymentPage() {
               <span className="flex items-center justify-center w-8 h-8 bg-surface-container rounded-full shrink-0 mr-2">
                 <Check className="w-4 h-4 text-[#0F172A]" />
               </span>
-              <span className="hidden sm:inline">1. Guest Details</span>
+              <span className="hidden sm:inline">1. Thông tin khách</span>
             </li>
             <li className="flex items-center text-[#0F172A] font-bold after:content-[''] after:w-full after:h-px after:border-b after:border-outline-variant after:mx-4">
               <span className="flex items-center justify-center w-8 h-8 bg-[#0F172A] text-on-primary rounded-full shrink-0 mr-2">
                 2
               </span>
-              <span className="hidden sm:inline">2. Payment</span>
+              <span className="hidden sm:inline">2. Thanh toán</span>
             </li>
             <li className="flex items-center text-on-surface-variant">
               <span className="flex items-center justify-center w-8 h-8 bg-surface-container rounded-full shrink-0 mr-2">
                 3
               </span>
-              <span className="hidden sm:inline">3. Confirmation</span>
+              <span className="hidden sm:inline">3. Xác nhận</span>
             </li>
           </ol>
         </div>
@@ -96,7 +97,7 @@ export default function PaymentPage() {
         <div className="flex flex-col lg:flex-row gap-gutter">
           {/* Left Column: Payment Methods (60%) */}
           <div className="w-full lg:w-3/5 space-y-lg">
-            <h1 className="font-h1 text-h1 text-[#0F172A] mb-lg">Select Payment Method</h1>
+            <h1 className="font-h1 text-h1 text-[#0F172A] mb-lg">Chọn phương thức thanh toán</h1>
 
             {/* Option 1: Credit/Debit Card */}
             <div
@@ -121,7 +122,7 @@ export default function PaymentPage() {
                 </div>
                 <div className="ml-3 flex-1 flex justify-between items-center">
                   <label className="font-h3 text-h3 text-[#0F172A] cursor-pointer" htmlFor="card">
-                    Credit/Debit Card
+                    Thẻ Tín dụng/Ghi nợ
                   </label>
                   <div className="flex gap-2">
                     <CreditCard className="w-6 h-6 text-[#0F172A]" />
@@ -133,19 +134,19 @@ export default function PaymentPage() {
                 <div className="space-y-md mt-4 animate-in fade-in slide-in-from-top-4 duration-300">
                   <div className="flex flex-col gap-xs">
                     <label className="font-label text-label text-[#0F172A]">
-                      Cardholder Name
+                      Tên chủ thẻ
                     </label>
                     <input
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       className="w-full h-12 bg-surface-container-lowest border border-[#0F172A] rounded text-body-md px-4 focus:ring-0 focus:border-2 focus:border-[#0F172A] outline-none"
-                      placeholder="Name on card"
+                      placeholder="Tên in trên thẻ"
                       type="text"
                     />
                   </div>
                   <div className="flex flex-col gap-xs">
                     <label className="font-label text-label text-[#0F172A]">
-                      Card Number
+                      Số thẻ
                     </label>
                     <div className="relative">
                       <span className="absolute inset-y-0 left-0 flex items-center pl-4">
@@ -163,7 +164,7 @@ export default function PaymentPage() {
                   <div className="flex gap-md">
                     <div className="flex-1 flex flex-col gap-xs">
                       <label className="font-label text-label text-[#0F172A]">
-                        Expiry Date
+                        Ngày hết hạn
                       </label>
                       <input
                         value={expiry}
@@ -174,7 +175,7 @@ export default function PaymentPage() {
                       />
                     </div>
                     <div className="flex-1 flex flex-col gap-xs">
-                      <label className="font-label text-label text-[#0F172A]">CVV</label>
+                      <label className="font-label text-label text-[#0F172A]">Mã CVV</label>
                       <input
                         value={cvv}
                         onChange={handleCvvChange}
@@ -212,10 +213,10 @@ export default function PaymentPage() {
                 </div>
                 <div className="ml-3 flex-1">
                   <label className="font-h3 text-h3 text-[#0F172A] block cursor-pointer" htmlFor="qr">
-                    VietQR / Banking App
+                    VietQR / Ứng dụng ngân hàng
                   </label>
                   <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                    Scan QR code using your local banking app.
+                    Quét mã QR bằng ứng dụng ngân hàng của bạn.
                   </p>
                 </div>
               </div>
@@ -233,8 +234,8 @@ export default function PaymentPage() {
                 <Lock className="w-5 h-5" />
               )}
               {isProcessing
-                ? "Processing Payment..."
-                : `Complete Payment - ${booking.currency}${booking.total.toFixed(2)}`}
+                ? "Đang xử lý thanh toán..."
+                : `Hoàn tất thanh toán - ${formatCurrency(booking.total)}`}
             </button>
           </div>
 
@@ -244,7 +245,7 @@ export default function PaymentPage() {
               <div className="h-48 w-full relative">
                 <Image
                   src={booking.image || "https://lh3.googleusercontent.com/aida/ADBb0uhgfl6fC28Wm4QCsMvtTXojezHht6aEGk7v7B3dJ6yJiBe9Z4qM0PqPJtUuzXog7N5dAn43E3EpxrdrLhmSlR2TcgLKeMAlXkEkuTTbN7LqrtYdZX5XnosI9eh5cnOJ980vHcrifSoU4on3pQ5dquc34GUr5oiAFXlXM0fKIv6uVxQn9Uuj6DadQeZbimzbhsj0ypAsY4gbkBle5gLkDSKNlF7FCMlNrzSNGsKavza2kCO0uojCG0bYng"}
-                  alt="Room preview"
+                  alt="Ảnh phòng"
                   fill
                   className="object-cover"
                 />
@@ -260,7 +261,7 @@ export default function PaymentPage() {
                 <div className="flex justify-between items-center border-b border-outline-variant/30 pb-md font-body-sm text-body-sm">
                   <div className="flex flex-col">
                     <span className="font-label text-label text-on-surface-variant uppercase mb-1">
-                      Check-in
+                      Nhận phòng
                     </span>
                     <span className="text-[#0F172A] font-bold">
                       {checkInDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
@@ -270,7 +271,7 @@ export default function PaymentPage() {
                   <div className="h-8 w-px bg-outline-variant/30"></div>
                   <div className="flex flex-col text-right">
                     <span className="font-label text-label text-on-surface-variant uppercase mb-1">
-                      Check-out
+                      Trả phòng
                     </span>
                     <span className="text-[#0F172A] font-bold">
                       {checkOutDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
@@ -282,28 +283,24 @@ export default function PaymentPage() {
                 <div className="flex flex-col gap-sm py-md border-b border-outline-variant/30 font-body-sm text-body-sm text-on-surface-variant">
                   <div className="flex justify-between">
                     <span>
-                      {booking.nights} Nights x {booking.currency}
-                      {(booking.roomTotal / booking.nights).toFixed(2)}
+                      {booking.nights} Đêm x {formatCurrency(booking.roomTotal / booking.nights)}
                     </span>
-                    <span>
-                      {booking.currency}
-                      {booking.roomTotal.toFixed(2)}
+                    <span className="font-bold">
+                      {formatCurrency(booking.roomTotal)}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Taxes & Fees</span>
-                    <span>
-                      {booking.currency}
-                      {booking.taxes.toFixed(2)}
+                    <span>Thuế & Phí</span>
+                    <span className="font-bold">
+                      {formatCurrency(booking.taxes)}
                     </span>
                   </div>
                 </div>
 
                 <div className="flex justify-between items-end pt-sm">
-                  <span className="font-h3 text-h3 text-[#0F172A]">Total</span>
-                  <span className="font-h1 text-h1 text-[#0F172A] tracking-tight">
-                    {booking.currency}
-                    {booking.total.toFixed(2)}
+                  <span className="font-h3 text-h3 text-[#0F172A]">Tổng cộng</span>
+                  <span className="font-h1 text-h1 text-[#0F172A] tracking-tight font-bold">
+                    {formatCurrency(booking.total)}
                   </span>
                 </div>
               </div>

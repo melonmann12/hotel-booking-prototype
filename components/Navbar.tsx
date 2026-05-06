@@ -12,30 +12,30 @@ export default function Navbar() {
             href="/"
             className="font-button text-button text-secondary hover:underline decoration-1 underline-offset-4 transition-all duration-200 ease-in-out"
           >
-            Home
+            Trang chủ
           </Link>
           <Link
             href="#"
             className="font-button text-button text-secondary hover:underline decoration-1 underline-offset-4 transition-all duration-200 ease-in-out"
           >
-            About Us
+            Về chúng tôi
           </Link>
           <Link
             href="#"
             className="font-button text-button text-secondary hover:underline decoration-1 underline-offset-4 transition-all duration-200 ease-in-out"
           >
-            Services
+            Dịch vụ
           </Link>
           <Link
             href="#"
             className="font-button text-button text-secondary hover:underline decoration-1 underline-offset-4 transition-all duration-200 ease-in-out"
           >
-            Blog
+            Bài viết
           </Link>
         </nav>
         <div className="flex items-center space-x-md">
           <button className="bg-primary-container text-on-primary font-button text-button px-lg py-sm rounded-lg hover:bg-opacity-90 transition-opacity">
-            Log in
+            Đăng nhập
           </button>
         </div>
       </div>

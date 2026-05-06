@@ -38,10 +38,10 @@ export default function BookingSuccessPage() {
             </div>
             <div className="space-y-sm">
               <h1 className="font-display text-display text-primary-container">
-                Booking Successful!
+                Đặt phòng thành công!
               </h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant">
-                Thank you for choosing DeliBook. Your stay is now confirmed.
+                Cảm ơn bạn đã chọn DeliBook. Kỳ nghỉ của bạn đã được xác nhận.
               </p>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function BookingSuccessPage() {
           {/* 2. Booking Reference */}
           <div className="inline-flex items-center space-x-sm border border-dashed border-primary-container rounded-lg py-md px-lg bg-surface-bright">
             <span className="font-h3 text-h3 text-primary-container">
-              Booking ID: {bookingId}
+              Mã đặt phòng: {bookingId}
             </span>
             <button
               aria-label="Copy Booking ID"
@@ -64,7 +64,7 @@ export default function BookingSuccessPage() {
           <div className="flex items-center space-x-sm text-on-surface-variant font-body-md text-body-md bg-surface-container-low py-sm px-md rounded-full">
             <Mail className="w-5 h-5 text-primary-container" />
             <span>
-              A confirmation voucher and receipt have been sent to <strong>user@example.com</strong>
+              Voucher xác nhận và biên lai đã được gửi đến <strong>user@example.com</strong>
             </span>
           </div>
 
@@ -92,7 +92,7 @@ export default function BookingSuccessPage() {
               <div className="grid grid-cols-2 gap-lg border-t border-outline-variant/30 pt-md">
                 <div>
                   <span className="font-label text-label text-on-surface-variant uppercase tracking-widest block mb-xs">
-                    Check-in
+                    Nhận phòng
                   </span>
                   <span className="font-button text-button text-on-background">
                     {checkInDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
@@ -100,7 +100,7 @@ export default function BookingSuccessPage() {
                 </div>
                 <div>
                   <span className="font-label text-label text-on-surface-variant uppercase tracking-widest block mb-xs">
-                    Check-out
+                    Trả phòng
                   </span>
                   <span className="font-button text-button text-on-background">
                     {checkOutDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
@@ -108,13 +108,13 @@ export default function BookingSuccessPage() {
                 </div>
                 <div>
                   <span className="font-label text-label text-on-surface-variant uppercase tracking-widest block mb-xs">
-                    Guests
+                    Khách
                   </span>
-                  <span className="font-button text-button text-on-background">2 Adults</span>
+                  <span className="font-button text-button text-on-background">2 Người lớn</span>
                 </div>
                 <div>
                   <span className="font-label text-label text-on-surface-variant uppercase tracking-widest block mb-xs">
-                    Total Paid
+                    Tổng đã thanh toán
                   </span>
                   <span className="font-h3 text-h3 text-primary-container">
                     {booking.currency}{booking.total.toFixed(2)}
@@ -130,14 +130,14 @@ export default function BookingSuccessPage() {
               href="/"
               className="w-full sm:w-auto text-center bg-primary-container text-on-primary font-button text-button py-md px-xl rounded-lg hover:bg-inverse-surface transition-colors"
             >
-              Back to Home
+              Về Trang chủ
             </Link>
             <button
               onClick={() => window.print()}
               className="w-full sm:w-auto text-center bg-surface-container-lowest text-primary-container border border-primary-container font-button text-button py-md px-xl rounded-lg hover:bg-primary-container hover:text-on-primary transition-colors flex items-center justify-center space-x-sm"
             >
               <Printer className="w-5 h-5" />
-              <span>Print Receipt</span>
+              <span>In biên lai</span>
             </button>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Lock, Calendar, Clock, User, MessageSquare } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { formatCurrency } from "@/lib/format";
 
 interface BookingFormClientProps {
   hotelName: string;
@@ -70,13 +71,13 @@ export default function BookingFormClient({
     <div className="flex flex-col lg:flex-row gap-xl">
       {/* Left Column: Form */}
       <div className="w-full lg:w-3/5">
-        <h1 className="font-h1 text-h1 text-on-surface mb-lg">Complete Your Booking</h1>
+        <h1 className="font-h1 text-h1 text-on-surface mb-lg">Hoàn tất đặt phòng</h1>
         <form onSubmit={handleSubmit} className="space-y-gutter">
           
           {/* Guest Information Section */}
           <div className="space-y-gutter">
             <h2 className="font-h3 text-h3 text-primary flex items-center gap-sm">
-              <User className="w-5 h-5" /> Guest Information
+              <User className="w-5 h-5" /> Thông tin khách hàng
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
               <div className="space-y-sm">
@@ -84,13 +85,13 @@ export default function BookingFormClient({
                   className="block font-label text-label text-on-surface uppercase"
                   htmlFor="fullName"
                 >
-                  Full Name (as per Passport/ID)
+                  Họ và tên (theo CMND/CCCD/Hộ chiếu)
                 </label>
                 <input
                   required
                   className="w-full bg-surface border border-primary-container text-on-surface rounded-lg px-md py-sm focus:border-2 focus:ring-primary-container outline-none font-body-md transition-all duration-200"
                   id="fullName"
-                  placeholder="John Doe"
+                  placeholder="Nguyễn Văn A"
                   type="text"
                 />
               </div>
@@ -99,7 +100,7 @@ export default function BookingFormClient({
                   className="block font-label text-label text-on-surface uppercase"
                   htmlFor="email"
                 >
-                  Email Address
+                  Địa chỉ Email
                 </label>
                 <input
                   required
@@ -116,7 +117,7 @@ export default function BookingFormClient({
                   className="block font-label text-label text-on-surface uppercase"
                   htmlFor="phone"
                 >
-                  Phone Number
+                  Số điện thoại
                 </label>
                 <input
                   required
@@ -128,7 +129,7 @@ export default function BookingFormClient({
               </div>
               <div className="space-y-sm">
                 <label className="block font-label text-label text-on-surface uppercase">
-                  Gender
+                  Giới tính
                 </label>
                 <div className="flex gap-gutter mt-sm">
                   <label className="flex items-center space-x-sm cursor-pointer">
@@ -139,7 +140,7 @@ export default function BookingFormClient({
                       value="male"
                       required
                     />
-                    <span className="font-body-md text-on-surface">Male</span>
+                    <span className="font-body-md text-on-surface">Nam</span>
                   </label>
                   <label className="flex items-center space-x-sm cursor-pointer">
                     <input
@@ -148,7 +149,7 @@ export default function BookingFormClient({
                       type="radio"
                       value="female"
                     />
-                    <span className="font-body-md text-on-surface">Female</span>
+                    <span className="font-body-md text-on-surface">Nữ</span>
                   </label>
                 </div>
               </div>
@@ -160,12 +161,12 @@ export default function BookingFormClient({
           {/* Date Selection Section */}
           <div className="space-y-gutter">
             <h2 className="font-h3 text-h3 text-primary flex items-center gap-sm">
-              <Calendar className="w-5 h-5" /> Date Selection
+              <Calendar className="w-5 h-5" /> Chọn ngày
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
               <div className="space-y-sm">
                 <label className="block font-label text-label text-on-surface uppercase">
-                  Check-in Date
+                  Ngày nhận phòng
                 </label>
                 <input
                   required
@@ -177,7 +178,7 @@ export default function BookingFormClient({
               </div>
               <div className="space-y-sm">
                 <label className="block font-label text-label text-on-surface uppercase">
-                  Check-out Date
+                  Ngày trả phòng
                 </label>
                 <input
                   required
@@ -190,14 +191,14 @@ export default function BookingFormClient({
             </div>
             <div className="space-y-sm">
               <label className="block font-label text-label text-on-surface uppercase flex items-center gap-xs">
-                <Clock className="w-4 h-4" /> Estimated Arrival Time
+                <Clock className="w-4 h-4" /> Thời gian đến dự kiến
               </label>
               <select className="w-full bg-surface border border-primary-container text-on-surface rounded-lg px-md py-sm focus:border-2 focus:ring-primary-container outline-none font-body-md transition-all duration-200">
-                <option>I don't know yet</option>
+                <option>Tôi chưa biết</option>
                 <option>12:00 PM - 2:00 PM</option>
                 <option>2:00 PM - 4:00 PM</option>
                 <option>4:00 PM - 6:00 PM</option>
-                <option>After 6:00 PM</option>
+                <option>Sau 18:00</option>
               </select>
             </div>
           </div>
@@ -207,19 +208,19 @@ export default function BookingFormClient({
           {/* Special Requests Section */}
           <div className="space-y-gutter">
             <h2 className="font-h3 text-h3 text-primary flex items-center gap-sm">
-              <MessageSquare className="w-5 h-5" /> Special Requests
+              <MessageSquare className="w-5 h-5" /> Yêu cầu đặc biệt
             </h2>
             <div className="space-y-sm">
               <label
                 className="block font-label text-label text-on-surface uppercase"
                 htmlFor="requests"
               >
-                Any specific needs? (Optional)
+                Bạn có yêu cầu gì không? (Không bắt buộc)
               </label>
               <textarea
                 className="w-full bg-surface border border-primary-container text-on-surface rounded-lg px-md py-sm focus:border-2 focus:ring-primary-container outline-none font-body-md transition-all duration-200 resize-none"
                 id="requests"
-                placeholder="e.g., Early check-in, high floor, dietary requirements..."
+                placeholder="VD: Nhận phòng sớm, phòng tầng cao..."
                 rows={4}
               ></textarea>
             </div>
@@ -236,7 +237,7 @@ export default function BookingFormClient({
               ) : (
                 <Lock className="w-5 h-5" />
               )}
-              <span>{isSubmitting ? "Processing..." : "Confirm Booking"}</span>
+              <span>{isSubmitting ? "Đang xử lý..." : "Xác nhận đặt phòng"}</span>
             </button>
           </div>
         </form>
@@ -248,7 +249,7 @@ export default function BookingFormClient({
           <div className="w-full h-48 relative">
             <Image
               src={image}
-              alt="Room view"
+              alt="Ảnh phòng"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
@@ -260,7 +261,7 @@ export default function BookingFormClient({
             <div className="flex justify-between items-center mb-md pb-md border-b border-outline-variant">
               <div>
                 <p className="font-label text-label text-on-surface-variant uppercase mb-xs">
-                  Check-in
+                  Nhận phòng
                 </p>
                 <p className="font-body-md text-on-surface font-semibold">
                   {checkInDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
@@ -268,7 +269,7 @@ export default function BookingFormClient({
               </div>
               <div className="text-right">
                 <p className="font-label text-label text-on-surface-variant uppercase mb-xs">
-                  Check-out
+                  Trả phòng
                 </p>
                 <p className="font-body-md text-on-surface font-semibold">
                   {checkOutDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
@@ -278,28 +279,25 @@ export default function BookingFormClient({
             <div className="space-y-sm mb-lg">
               <div className="flex justify-between items-center">
                 <span className="font-body-md text-on-surface-variant">
-                  Price per night x {nights}
+                  Giá mỗi đêm x {nights}
                 </span>
-                <span className="font-body-md text-on-surface">
-                  {currency}
-                  {roomTotal.toFixed(2)}
+                <span className="font-body-md text-on-surface font-bold">
+                  {formatCurrency(roomTotal)}
                 </span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="font-body-md text-on-surface-variant">
-                  Taxes & Fees
+                  Thuế & Phí
                 </span>
-                <span className="font-body-md text-on-surface">
-                  {currency}
-                  {taxes.toFixed(2)}
+                <span className="font-body-md text-on-surface font-bold">
+                  {formatCurrency(taxes)}
                 </span>
               </div>
             </div>
             <div className="flex justify-between items-center pt-md border-t border-primary-container">
-              <span className="font-h3 text-h3 text-on-surface">Total</span>
-              <span className="font-h1 text-h1 text-primary-container">
-                {currency}
-                {total.toFixed(2)}
+              <span className="font-h3 text-h3 text-on-surface">Tổng cộng</span>
+              <span className="font-h1 text-h1 text-primary-container font-bold">
+                {formatCurrency(total)}
               </span>
             </div>
           </div>

@@ -1,83 +1,588 @@
 [
     {
-        "id": "grand-hotel-milan",
-        "name": "Grand Hotel Milan",
+        "id": "six-senses-con-dao",
+        "name": "Six Senses Côn Đảo",
         "stars": 5,
-        "address": "Via Manzoni 31, 20121 Milan, Italy",
-        "city": "Milan",
-        "country": "Italy",
-        "startingPrice": 280,
-        "currency": "€",
-        "description": "Experience unparalleled luxury in the heart of Milan. Grand Hotel Milan seamlessly blends 19th-century elegance with contemporary design. Located just steps away from the iconic Duomo and the prestigious Montenapoleone shopping district, it offers a serene oasis amidst the vibrant city...",
+        "address": "Bãi Đất Dốc, huyện Côn Đảo, tỉnh Bà Rịa – Vũng Tàu",
+        "city": "Côn Đảo",
+        "country": "Việt Nam",
+        "startingPrice": 21250000,
+        "currency": "VNĐ",
+        "description": "Khu nghỉ dưỡng 5 sao đầu tiên và duy nhất tại Côn Đảo thuộc phân khúc sang trọng, chăm sóc sức khỏe và sinh thái. Khẩu hiệu của nơi này là 'Một thế giới khác biệt so với cuộc sống thường nhật'. Resort có bãi biển riêng dài 1,6km và đã thả 30.000 rùa con về biển.",
         "images": [
-            "/images/hotels/milan-1.jpg",
-            "/images/hotels/milan-2.jpg",
-            "/images/hotels/milan-3.jpg",
-            "/images/hotels/milan-4.jpg"
+            "/images/hotels/six-senses-1.jpg",
+            "/images/hotels/six-senses-1.jpg",
+            "/images/hotels/six-senses-1.jpg",
+            "/images/hotels/six-senses-1.jpg"
         ],
         "amenities": [
             {
-                "label": "Swimming Pool",
+                "label": "Hồ bơi vô cực riêng",
                 "icon": "Waves"
             },
             {
-                "label": "Spa & Wellness",
+                "label": "Six Senses Spa",
                 "icon": "Flower2"
             },
             {
-                "label": "24/7 Front Desk",
-                "icon": "Clock"
+                "label": "Vườn rau hữu cơ",
+                "icon": "Leaf"
             },
             {
-                "label": "Fitness Center",
-                "icon": "Dumbbell"
+                "label": "Rạp chiếu phim ngoài trời",
+                "icon": "Film"
+            }
+        ],
+        "rating": {
+            "score": 9.8,
+            "label": "Xuất sắc",
+            "reviewCount": 856
+        },
+        "featuredReviews": [],
+        "rooms": [
+            {
+                "id": "room-ssc-01",
+                "type": "Biệt thự hồ bơi song lập hướng biển",
+                "bedInfo": "1 phòng ngủ",
+                "capacity": 2,
+                "options": [
+                    "Hồ bơi vô cực riêng",
+                    "Butler 24/7"
+                ],
+                "price": 21250000
+            }
+        ]
+    },
+    {
+        "id": "flamingo-dai-lai",
+        "name": "Flamingo Đại Lải Resort",
+        "stars": 5,
+        "address": "Xã Ngọc Thanh, thành phố Phúc Yên, Tỉnh Vĩnh Phúc",
+        "city": "Vĩnh Phúc",
+        "country": "Việt Nam",
+        "startingPrice": 3500000,
+        "currency": "VNĐ",
+        "description": "Nằm phía Bắc hồ Đại Lải, khu nghỉ dưỡng sinh thái mang kiến trúc xanh này đã nhận hơn 60 giải thưởng trong và ngoài nước. Nơi đây cách trung tâm Hà Nội khoảng 50km.",
+        "images": [
+            "/images/hotels/flamingo-1.jpg",
+            "/images/hotels/flamingo-1.jpg",
+            "/images/hotels/flamingo-1.jpg",
+            "/images/hotels/flamingo-1.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "14 nhà hàng & bar",
+                "icon": "Utensils"
             },
             {
-                "label": "Bar & Lounge",
+                "label": "4 hồ bơi lớn",
+                "icon": "Waves"
+            },
+            {
+                "label": "SEVA Spa",
+                "icon": "Flower2"
+            },
+            {
+                "label": "Vườn hoa hồng 5.000m²",
+                "icon": "Map"
+            }
+        ],
+        "rating": {
+            "score": 9.0,
+            "label": "Tuyệt vời",
+            "reviewCount": 1250
+        },
+        "featuredReviews": [],
+        "rooms": [
+            {
+                "id": "room-fla-01",
+                "type": "Villa 1 phòng ngủ",
+                "bedInfo": "1 giường đôi",
+                "capacity": 2,
+                "options": [
+                    "Tối đa 2 người lớn + 1 trẻ em"
+                ],
+                "price": 3500000
+            }
+        ]
+    },
+    {
+        "id": "intercontinental-danang",
+        "name": "InterContinental Danang Sun Peninsula Resort",
+        "stars": 5,
+        "address": "Bãi Bắc, Bán đảo Sơn Trà, Đà Nẵng",
+        "city": "Đà Nẵng",
+        "country": "Việt Nam",
+        "startingPrice": 12000000,
+        "currency": "VNĐ",
+        "description": "Khu nghỉ dưỡng siêu sang do Bill Bensley thiết kế với kiến trúc 4 tầng: Heaven, Sky, Earth, Sea. Khu nghỉ dưỡng có vị trí tựa sơn hướng thủy và bãi biển riêng dài 750m.",
+        "images": [
+            "/images/hotels/inter-dn-1.jpg",
+            "/images/hotels/inter-dn-1.jpg",
+            "/images/hotels/inter-dn-1.jpg",
+            "/images/hotels/inter-dn-1.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "Nhà hàng La Maison 1888",
+                "icon": "Utensils"
+            },
+            {
+                "label": "HARNN Heritage Spa",
+                "icon": "Flower2"
+            },
+            {
+                "label": "Long Bar 50m",
                 "icon": "GlassWater"
             }
         ],
         "rating": {
-            "score": 9.2,
-            "label": "Superb",
-            "reviewCount": 1240
+            "score": 9.8,
+            "label": "Xuất sắc",
+            "reviewCount": 11155
         },
-        "featuredReviews": [
-            {
-                "userName": "Sarah J.",
-                "date": "Oct 2023",
-                "comment": "Absolutely stunning property. The staff went above and beyond to make our anniversary special. The location couldn't be better for..."
-            },
-            {
-                "userName": "Michael T.",
-                "date": "Sep 2023",
-                "comment": "The spa facilities are world-class. Breakfast buffet was extensive and high quality. Rooms are quiet despite the central location."
-            }
-        ],
+        "featuredReviews": [],
         "rooms": [
             {
-                "id": "room-001",
-                "type": "Deluxe King",
-                "bedInfo": "1 Extra-large double bed",
+                "id": "room-icdn-01",
+                "type": "Phòng tiêu chuẩn",
+                "bedInfo": "1 giường đôi",
                 "capacity": 2,
                 "options": [
-                    "Free Wi-Fi",
-                    "Breakfast included",
-                    "Non-smoking"
+                    "Dành cho 2 người lớn",
+                    "Miễn phí trẻ dưới 6 tuổi"
                 ],
-                "price": 280
+                "price": 12000000
+            }
+        ]
+    },
+    {
+        "id": "metropole-hanoi",
+        "name": "Sofitel Legend Metropole Hà Nội",
+        "stars": 5,
+        "address": "15 Ngô Quyền, Hoàn Kiếm, Hà Nội",
+        "city": "Hà Nội",
+        "country": "Việt Nam",
+        "startingPrice": 6500000,
+        "currency": "VNĐ",
+        "description": "Khách sạn sang trọng mang phong cách Pháp cổ với nội thất cổ điển và tầm nhìn ra phố cổ Hà Nội. Khách sạn cung cấp nhà hàng Pháp Le Beaulieu, hồ bơi ngoài trời và dịch vụ phòng 24/7.",
+        "images": [
+            "/images/hotels/metropole-1.jpg",
+            "/images/hotels/metropole-1.jpg",
+            "/images/hotels/metropole-1.jpg",
+            "/images/hotels/metropole-1.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "Hồ bơi ngoài trời",
+                "icon": "Waves"
             },
             {
-                "id": "room-002",
-                "type": "Executive Suite",
-                "bedInfo": "1 Extra-large double bed + Sofa bed",
-                "capacity": 3,
+                "label": "Nhà hàng Pháp",
+                "icon": "Utensils"
+            },
+            {
+                "label": "Dịch vụ phòng 24/7",
+                "icon": "Clock"
+            }
+        ],
+        "rating": {
+            "score": 9.4,
+            "label": "Tuyệt vời",
+            "reviewCount": 2800
+        },
+        "featuredReviews": [],
+        "rooms": [
+            {
+                "id": "room-met-01",
+                "type": "Luxury Room",
+                "bedInfo": "King / Twin",
+                "capacity": 2,
                 "options": [
-                    "Free Wi-Fi",
-                    "Breakfast included",
-                    "City View"
+                    "View phố cổ",
+                    "Bồn tắm sang trọng"
                 ],
-                "price": 450
+                "price": 6500000
+            }
+        ]
+    },
+    {
+        "id": "lotte-hotel-hanoi",
+        "name": "Lotte Hotel Hanoi",
+        "stars": 5,
+        "address": "54 Liễu Giai, Ba Đình, Hà Nội",
+        "city": "Hà Nội",
+        "country": "Việt Nam",
+        "startingPrice": 3200000,
+        "currency": "VNĐ",
+        "description": "Nằm trên tầng cao, khách sạn cung cấp tầm nhìn toàn cảnh Hà Nội. Tại đây có trung tâm thương mại, sky bar, hồ bơi, gym và spa.",
+        "images": [
+            "/images/hotels/lotte-1.jpg",
+            "/images/hotels/lotte-1.jpg",
+            "/images/hotels/lotte-1.jpg",
+            "/images/hotels/lotte-1.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "Sky bar tầng cao",
+                "icon": "GlassWater"
+            },
+            {
+                "label": "Hồ bơi",
+                "icon": "Waves"
+            },
+            {
+                "label": "Trung tâm thương mại",
+                "icon": "ShoppingBag"
+            }
+        ],
+        "rating": {
+            "score": 9.2,
+            "label": "Tuyệt vời",
+            "reviewCount": 4500
+        },
+        "featuredReviews": [],
+        "rooms": [
+            {
+                "id": "room-lotte-01",
+                "type": "Deluxe Sky Room",
+                "bedInfo": "King / Twin",
+                "capacity": 2,
+                "options": [
+                    "View toàn cảnh Hà Nội",
+                    "Wifi tốc độ cao"
+                ],
+                "price": 3200000
+            }
+        ]
+    },
+    {
+        "id": "jw-marriott-hanoi",
+        "name": "JW Marriott Hanoi",
+        "stars": 5,
+        "address": "8 Đỗ Đức Dục, Nam Từ Liêm, Hà Nội",
+        "city": "Hà Nội",
+        "country": "Việt Nam",
+        "startingPrice": 4000000,
+        "currency": "VNĐ",
+        "description": "Khách sạn sang trọng, hiện đại với không gian rộng lớn, cung cấp tầm nhìn ra hồ và trung tâm hội nghị. Tại đây có 6 nhà hàng, quầy bar, hồ bơi trong nhà và spa.",
+        "images": [
+            "/images/hotels/jw-1.jpg",
+            "/images/hotels/jw-1.jpg",
+            "/images/hotels/jw-1.jpg",
+            "/images/hotels/jw-1.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "6 nhà hàng & quầy bar",
+                "icon": "Utensils"
+            },
+            {
+                "label": "Hồ bơi trong nhà",
+                "icon": "Waves"
+            },
+            {
+                "label": "Spa, gym",
+                "icon": "Flower2"
+            }
+        ],
+        "rating": {
+            "score": 9.3,
+            "label": "Xuất sắc",
+            "reviewCount": 3900
+        },
+        "featuredReviews": [],
+        "rooms": [
+            {
+                "id": "room-jw-01",
+                "type": "Deluxe Room",
+                "bedInfo": "King / Twin",
+                "capacity": 2,
+                "options": [
+                    "View hồ & trung tâm hội nghị"
+                ],
+                "price": 4000000
+            }
+        ]
+    },
+    {
+        "id": "cozrum-homes-saphera",
+        "name": "COZRUM HOMES - SAPHERA HOTEL",
+        "stars": 3,
+        "address": "TP. HCM",
+        "city": "Hồ Chí Minh",
+        "country": "Việt Nam",
+        "startingPrice": 750000,
+        "currency": "VNĐ",
+        "description": "Nhà nghỉ cung cấp dịch vụ tự check-in bằng mã khóa và phòng hướng phố Quận 1 năng động. Các phòng đều có bếp nhỏ nấu ăn, điều hòa và Tivi thông minh.",
+        "images": [
+            "/images/hotels/cozrum-1.jpg",
+            "/images/hotels/cozrum-1.jpg",
+            "/images/hotels/cozrum-1.jpg",
+            "/images/hotels/cozrum-1.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "Bếp nhỏ nấu ăn",
+                "icon": "ChefHat"
+            },
+            {
+                "label": "Tự check-in bằng mã khóa",
+                "icon": "Key"
+            }
+        ],
+        "rating": {
+            "score": 9.2,
+            "label": "Tuyệt vời",
+            "reviewCount": 150
+        },
+        "featuredReviews": [],
+        "rooms": [
+            {
+                "id": "room-coz-01",
+                "type": "Deluxe Studio with City View",
+                "bedInfo": "1 giường đôi lớn (Queen Size)",
+                "capacity": 2,
+                "options": [
+                    "Hướng phố"
+                ],
+                "price": 750000
+            }
+        ]
+    },
+    {
+        "id": "the-kupid-homestay",
+        "name": "THE KUPID HOMESTAY",
+        "stars": 3,
+        "address": "Đà Lạt",
+        "city": "Đà Lạt",
+        "country": "Việt Nam",
+        "startingPrice": 600000,
+        "currency": "VNĐ",
+        "description": "Homestay cung cấp tầm nhìn hướng ra thung lũng rừng thông bạt ngàn. Nơi đây có bồn tắm gỗ lộ thiên, dịch vụ cafe sáng miễn phí và khu vực đốt lửa trại buổi tối.",
+        "images": [
+            "/images/hotels/kupid-1.jpg",
+            "/images/hotels/kupid-1.jpg",
+            "/images/hotels/kupid-1.jpg",
+            "/images/hotels/kupid-1.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "Bồn tắm gỗ lộ thiên",
+                "icon": "Bath"
+            },
+            {
+                "label": "Khu vực đốt lửa trại",
+                "icon": "Flame"
+            }
+        ],
+        "rating": {
+            "score": 9.0,
+            "label": "Tuyệt vời",
+            "reviewCount": 210
+        },
+        "featuredReviews": [],
+        "rooms": [
+            {
+                "id": "room-kup-01",
+                "type": "Dreamer Room (Phòng Gác Mái View Đồi)",
+                "bedInfo": "1 giường đôi lớn kê sát sàn gỗ",
+                "capacity": 2,
+                "options": [
+                    "View thung lũng rừng thông"
+                ],
+                "price": 600000
+            }
+        ]
+    },
+    {
+        "id": "hanoi-allure-hotel",
+        "name": "HANOI ALLURE HOTEL",
+        "stars": 4,
+        "address": "Phố Cổ Hà Nội",
+        "city": "Hà Nội",
+        "country": "Việt Nam",
+        "startingPrice": 1100000,
+        "currency": "VNĐ",
+        "description": "Khách sạn nằm ngay trung tâm với tầm nhìn hướng phố Đào Duy Từ cổ kính. Nơi đây cung cấp bữa sáng buffet và các phòng được trang bị bồn tắm nằm cùng két sắt an toàn.",
+        "images": [
+            "/images/hotels/allure-1.jpg",
+            "/images/hotels/allure-1.jpg",
+            "/images/hotels/allure-1.jpg",
+            "/images/hotels/allure-1.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "Ăn sáng buffet",
+                "icon": "Coffee"
+            },
+            {
+                "label": "Dịch vụ xe đưa đón sân bay",
+                "icon": "Car"
+            }
+        ],
+        "rating": {
+            "score": 9.8,
+            "label": "Tuyệt vời",
+            "reviewCount": 340
+        },
+        "featuredReviews": [],
+        "rooms": [
+            {
+                "id": "room-all-01",
+                "type": "Executive Twin Room",
+                "bedInfo": "2 giường đơn (Twin Bed)",
+                "capacity": 2,
+                "options": [
+                    "Hướng phố"
+                ],
+                "price": 1100000
+            }
+        ]
+    },
+    {
+        "id": "u-lesa-retreat",
+        "name": "U Lesa Retreat - Nhà Bên Rừng",
+        "stars": 3,
+        "address": "Sóc Sơn, Hà Nội",
+        "city": "Hà Nội",
+        "country": "Việt Nam",
+        "startingPrice": 1300000,
+        "currency": "VNĐ",
+        "description": "Cách Phủ Thành Chương 3.2 km, chỗ nghỉ có hồ bơi ngoài trời, khu vườn và cung cấp các bữa ăn Bít-tết cũng như món Việt. Các phòng tại đây có sân trong và tầm nhìn ra núi.",
+        "images": [
+            "/images/hotels/ulesa-1.jpg",
+            "/images/hotels/ulesa-1.jpg",
+            "/images/hotels/ulesa-1.jpg",
+            "/images/hotels/ulesa-1.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "Hồ bơi ngoài trời",
+                "icon": "Waves"
+            },
+            {
+                "label": "2 nhà hàng",
+                "icon": "Utensils"
+            },
+            {
+                "label": "Sân chơi trẻ em",
+                "icon": "Smile"
+            }
+        ],
+        "rating": {
+            "score": 8.5,
+            "label": "Rất tốt",
+            "reviewCount": 180
+        },
+        "featuredReviews": [],
+        "rooms": [
+            {
+                "id": "room-ule-01",
+                "type": "Phòng tiêu chuẩn",
+                "bedInfo": "1 giường đôi",
+                "capacity": 2,
+                "options": [
+                    "Tầm nhìn ra núi",
+                    "Sân hiên"
+                ],
+                "price": 1300000
+            }
+        ]
+    },
+    {
+        "id": "september-garden-homestay",
+        "name": "September Garden Homestay",
+        "stars": 3,
+        "address": "19 Tổ Hồ Than Thở - Phường 12, Đà Lạt, Việt Nam",
+        "city": "Đà Lạt",
+        "country": "Việt Nam",
+        "startingPrice": 730000,
+        "currency": "VNĐ",
+        "description": "Homestay nằm cách Vườn hoa Đà Lạt 4.9 km, cung cấp khu vườn, sân hiên và bếp chung. Các phòng được trang bị ban công hoặc sân trong nhìn ra khung cảnh đồi núi xung quanh.",
+        "images": [
+            "/images/hotels/september-1.jpg",
+            "/images/hotels/september-1.jpg",
+            "/images/hotels/september-1.jpg",
+            "/images/hotels/september-1.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "Bếp chung",
+                "icon": "ChefHat"
+            },
+            {
+                "label": "Sân hiên phơi nắng",
+                "icon": "Sun"
+            }
+        ],
+        "rating": {
+            "score": 9.6,
+            "label": "Tuyệt vời",
+            "reviewCount": 120
+        },
+        "featuredReviews": [],
+        "rooms": [
+            {
+                "id": "room-sep-01",
+                "type": "Phòng tiêu chuẩn",
+                "bedInfo": "1 giường đôi",
+                "capacity": 2,
+                "options": [
+                    "Nhìn ra vườn",
+                    "Ban công"
+                ],
+                "price": 730000
+            }
+        ]
+    },
+    {
+        "id": "vuon-nha-cui-homestay",
+        "name": "Vườn Nhà Củi Homestay",
+        "stars": 3,
+        "address": "58 Đường An Sơn, Đà Lạt, Việt Nam",
+        "city": "Đà Lạt",
+        "country": "Việt Nam",
+        "startingPrice": 563037,
+        "currency": "VNĐ",
+        "description": "Cách Thiền Viện Trúc Lâm 5.4 km, chỗ nghỉ này cung cấp khu vườn, sân hiên, khu vực picnic và bếp chung. Nơi đây đặc biệt cho phép mang theo vật nuôi mà không tính thêm phí.",
+        "images": [
+            "/images/hotels/nhacui-1.jpg",
+            "/images/hotels/nhacui-1.jpg",
+            "/images/hotels/nhacui-1.jpg",
+            "/images/hotels/nhacui-1.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "Cho phép mang theo vật nuôi",
+                "icon": "Dog"
+            },
+            {
+                "label": "Tiện nghi BBQ",
+                "icon": "Flame"
+            },
+            {
+                "label": "Lò sưởi ngoài trời",
+                "icon": "Flame"
+            }
+        ],
+        "rating": {
+            "score": 8.3,
+            "label": "Rất tốt",
+            "reviewCount": 95
+        },
+        "featuredReviews": [],
+        "rooms": [
+            {
+                "id": "room-vnc-01",
+                "type": "Phòng tiêu chuẩn",
+                "bedInfo": "1 giường đôi",
+                "capacity": 2,
+                "options": [
+                    "Nhìn ra núi",
+                    "Bếp chung"
+                ],
+                "price": 563037
             }
         ]
     }

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { promises as fs } from "fs";
 import path from "path";
 import { icons, MapPin, Grid, Star, PersonStanding, Check } from "lucide-react";
+import { formatCurrency } from "@/lib/format";
 
 async function getHotel(id: string) {
   try {
@@ -39,15 +40,15 @@ export default async function HotelDetailPage({
     <>
 
 
-      <main className="flex-grow">
+      <main className="flex-grow w-full max-w-container-max mx-auto px-lg py-lg">
         {/* Breadcrumbs */}
-        <div className="max-w-container-max mx-auto px-margin-page py-lg">
+        <div className="mb-lg">
           <nav
             aria-label="Breadcrumb"
             className="flex text-on-surface-variant font-label text-label space-x-sm"
           >
             <Link href="/" className="hover:underline text-primary">
-              Home
+              Trang chủ
             </Link>
             <span>&gt;</span>
             <span className="hover:underline text-primary cursor-pointer">
@@ -63,7 +64,7 @@ export default async function HotelDetailPage({
         </div>
 
         {/* Image Gallery */}
-        <div className="max-w-container-max mx-auto px-margin-page mb-xl">
+        <div className="mb-xl">
           <div className="flex flex-col md:flex-row gap-base">
             <div className="w-full md:w-2/3 h-[400px] md:h-[600px] rounded-l-lg overflow-hidden relative">
               <Image
@@ -108,7 +109,7 @@ export default async function HotelDetailPage({
                 />
                 <div className="absolute inset-0 bg-primary/40 flex items-center justify-center cursor-pointer hover:bg-primary/50 transition-colors">
                   <span className="text-on-primary font-button text-button flex items-center gap-xs">
-                    <Grid className="w-5 h-5" /> See all photos
+                    <Grid className="w-5 h-5" /> Xem tất cả ảnh
                   </span>
                 </div>
               </div>
@@ -117,7 +118,7 @@ export default async function HotelDetailPage({
         </div>
 
         {/* Overview */}
-        <div className="max-w-container-max mx-auto px-margin-page mb-xxl flex flex-col md:flex-row justify-between items-start border-b border-outline/20 pb-xl">
+        <div className="mb-xxl flex flex-col md:flex-row justify-between items-start border-b border-outline/20 pb-xl">
           <div className="w-full md:w-2/3">
             <div className="flex items-center gap-xs mb-sm text-primary">
               {[...Array(hotel.stars)].map((_, i) => (
@@ -134,31 +135,30 @@ export default async function HotelDetailPage({
           </div>
           <div className="w-full md:w-1/3 text-left md:text-right mt-lg md:mt-0">
             <div className="font-body-md text-body-md text-on-surface-variant mb-xs">
-              Starting from
+              Giá từ
             </div>
-            <div className="font-h2 text-h2 text-primary">
-              {hotel.currency}
-              {hotel.startingPrice}{" "}
-              <span className="font-body-sm text-body-sm font-normal">/night</span>
+            <div className="font-h2 text-h2 text-primary font-bold mb-md">
+              {formatCurrency(hotel.startingPrice)}{" "}
+              <span className="font-body-sm text-body-sm font-normal">/đêm</span>
             </div>
             <a
               href="#rooms-section"
               className="inline-block mt-md bg-primary text-on-primary font-button text-button py-md px-xl rounded-lg w-full md:w-auto hover:bg-primary/90 transition-colors text-center"
             >
-              Select Room
+              Chọn phòng
             </a>
           </div>
         </div>
 
         {/* Details Grid */}
-        <div className="max-w-container-max mx-auto px-margin-page mb-xxl grid grid-cols-1 md:grid-cols-3 gap-xl">
+        <div className="mb-xxl grid grid-cols-1 md:grid-cols-3 gap-xl">
           {/* Description & Amenities */}
           <div className="md:col-span-2">
-            <h2 className="font-h2 text-h2 text-primary mb-md">About the Hotel</h2>
+            <h2 className="font-h2 text-h2 text-primary mb-md">Giới thiệu khách sạn</h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl">
               {hotel.description}
             </p>
-            <h3 className="font-h3 text-h3 text-primary mb-md">Popular Amenities</h3>
+            <h3 className="font-h3 text-h3 text-primary mb-md">Tiện nghi phổ biến</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-md font-body-md text-body-md text-on-surface-variant">
               {hotel.amenities.map((amenity: any, idx: number) => (
                 <div key={idx} className="flex items-center gap-sm">
@@ -179,7 +179,7 @@ export default async function HotelDetailPage({
                 <div>
                   <div className="font-h3 text-h3 text-primary">{hotel.rating.label}</div>
                   <div className="font-body-sm text-body-sm text-on-surface-variant">
-                    Based on {hotel.rating.reviewCount.toLocaleString()} reviews
+                    Dựa trên {hotel.rating.reviewCount.toLocaleString()} đánh giá
                   </div>
                 </div>
               </div>
@@ -203,7 +203,7 @@ export default async function HotelDetailPage({
                   className="inline-block mt-sm font-button text-button text-primary hover:underline"
                   href="#"
                 >
-                  Read all reviews
+                  Đọc tất cả đánh giá
                 </a>
               </div>
             </div>
@@ -211,21 +211,21 @@ export default async function HotelDetailPage({
         </div>
 
         {/* Room Selection Table */}
-        <div id="rooms-section" className="max-w-container-max mx-auto px-margin-page mb-xxl">
-          <h2 className="font-h2 text-h2 text-primary mb-lg">Available Rooms</h2>
+        <div id="rooms-section" className="mb-xxl">
+          <h2 className="font-h2 text-h2 text-primary mb-lg">Phòng trống</h2>
           <div className="border border-primary rounded-lg overflow-hidden">
             <table className="w-full text-left border-collapse">
               <thead className="bg-surface-container border-b border-primary">
                 <tr>
-                  <th className="p-lg font-button text-button text-primary">Room Type</th>
+                  <th className="p-lg font-button text-button text-primary">Loại phòng</th>
                   <th className="p-lg font-button text-button text-primary hidden md:table-cell">
-                    Capacity
+                    Sức chứa
                   </th>
                   <th className="p-lg font-button text-button text-primary hidden lg:table-cell">
-                    Options
+                    Tùy chọn
                   </th>
                   <th className="p-lg font-button text-button text-primary text-right">
-                    Price
+                    Giá
                   </th>
                 </tr>
               </thead>
@@ -260,15 +260,14 @@ export default async function HotelDetailPage({
                       </ul>
                     </td>
                     <td className="p-lg text-right">
-                      <div className="font-h3 text-h3 text-primary mb-sm">
-                        {hotel.currency}
-                        {room.price}
+                      <div className="font-h3 text-h3 text-primary mb-sm font-bold">
+                        {formatCurrency(room.price)}
                       </div>
                       <Link
                         href={`/book?hotelId=${hotel.id}&roomId=${room.id}`}
                         className="inline-block bg-primary text-on-primary font-button text-button py-sm px-lg rounded-lg hover:bg-primary/90 transition-colors w-full md:w-auto text-center"
                       >
-                        Book Now
+                        Đặt ngay
                       </Link>
                     </td>
                   </tr>
