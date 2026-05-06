@@ -31,9 +31,9 @@ export default function Home() {
               <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
                 Nghỉ dưỡng tại các Resort tuyệt đẹp,<br className="hidden md:block" /> Lưu trú tại những Khách sạn sang trọng.
               </h1>
-              <p className="text-lg md:text-2xl text-white/90 italic">
+              {/* <p className="text-lg md:text-2xl text-white/90 italic">
                 Dịch vụ chuyên nghiệp cho một chuyến đi suôn sẻ và đáng nhớ.
-              </p>
+              </p> */}
             </div>
             <SearchBar variant="hero" />
           </div>
@@ -50,8 +50,8 @@ export default function Home() {
                 <button
                   key={category}
                   className={`px-md py-sm rounded-full font-button text-button transition-colors ${index === 0
-                      ? "bg-[#0F172A] text-on-primary"
-                      : "bg-surface-container-lowest text-primary border border-primary hover:bg-[#0F172A] hover:text-on-primary"
+                    ? "bg-[#0F172A] text-on-primary"
+                    : "bg-surface-container-lowest text-primary border border-primary hover:bg-[#0F172A] hover:text-on-primary"
                     }`}
                 >
                   {category}
