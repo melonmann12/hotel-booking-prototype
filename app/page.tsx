@@ -24,9 +24,17 @@ export default function Home() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-primary/20"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
           <div className="relative z-10 w-full max-w-container-max mx-auto px-gutter flex flex-col items-center">
+            <div className="mb-xl flex flex-col items-center gap-sm text-center">
+              <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+                Nghỉ dưỡng tại các Resort tuyệt đẹp,<br className="hidden md:block" /> Lưu trú tại những Khách sạn sang trọng.
+              </h1>
+              <p className="text-lg md:text-2xl text-white/90 italic">
+                Dịch vụ chuyên nghiệp cho một chuyến đi suôn sẻ và đáng nhớ.
+              </p>
+            </div>
             <SearchBar variant="hero" />
           </div>
         </section>
@@ -41,11 +49,10 @@ export default function Home() {
               {categories.map((category, index) => (
                 <button
                   key={category}
-                  className={`px-md py-sm rounded-full font-button text-button transition-colors ${
-                    index === 0
+                  className={`px-md py-sm rounded-full font-button text-button transition-colors ${index === 0
                       ? "bg-[#0F172A] text-on-primary"
                       : "bg-surface-container-lowest text-primary border border-primary hover:bg-[#0F172A] hover:text-on-primary"
-                  }`}
+                    }`}
                 >
                   {category}
                 </button>
