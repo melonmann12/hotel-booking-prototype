@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { promises as fs } from "fs";
 import path from "path";
-import { icons, Globe, MapPin, Grid, Star, PersonStanding, Check } from "lucide-react";
+import { icons, MapPin, Grid, Star, PersonStanding, Check } from "lucide-react";
 
 async function getHotel(id: string) {
   try {
@@ -37,51 +37,7 @@ export default async function HotelDetailPage({
 
   return (
     <>
-      {/* TopNavBar */}
-      <header className="bg-surface/95 backdrop-blur-md dark:bg-surface-container-highest/95 border-b border-outline-variant/30 dark:border-outline/10 shadow-sm dark:shadow-none sticky w-full top-0 z-50">
-        <div className="flex justify-between items-center w-full px-margin-page h-20 max-w-container-max mx-auto">
-          <Link
-            href="/"
-            className="text-2xl font-bold tracking-tight text-primary dark:text-primary-fixed"
-          >
-            DeliBook
-          </Link>
-          <nav className="hidden md:flex gap-lg items-center">
-            <Link
-              href="/"
-              className="text-on-surface-variant dark:text-outline-variant font-medium hover:text-secondary dark:hover:text-secondary-fixed transition-all duration-300 scale-95 active:scale-90"
-            >
-              Home
-            </Link>
-            <Link
-              href="#"
-              className="text-on-surface-variant dark:text-outline-variant font-medium hover:text-secondary dark:hover:text-secondary-fixed transition-all duration-300 scale-95 active:scale-90"
-            >
-              About Us
-            </Link>
-            <Link
-              href="#"
-              className="text-on-surface-variant dark:text-outline-variant font-medium hover:text-secondary dark:hover:text-secondary-fixed transition-all duration-300 scale-95 active:scale-90"
-            >
-              Services
-            </Link>
-            <Link
-              href="#"
-              className="text-on-surface-variant dark:text-outline-variant font-medium hover:text-secondary dark:hover:text-secondary-fixed transition-all duration-300 scale-95 active:scale-90"
-            >
-              Blog
-            </Link>
-          </nav>
-          <div className="flex items-center gap-md text-primary dark:text-primary-fixed">
-            <button className="flex items-center justify-center scale-95 active:scale-90 transition-transform hover:text-secondary dark:hover:text-secondary-fixed duration-300">
-              <Globe className="w-6 h-6" />
-            </button>
-            <button className="font-button text-button scale-95 active:scale-90 transition-transform hover:text-secondary dark:hover:text-secondary-fixed duration-300">
-              Log in
-            </button>
-          </div>
-        </div>
-      </header>
+
 
       <main className="flex-grow">
         {/* Breadcrumbs */}
@@ -323,30 +279,7 @@ export default async function HotelDetailPage({
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-surface-container-lowest dark:bg-tertiary-container text-primary dark:text-tertiary-fixed font-body-md text-body-md font-label-sm text-label-sm w-full border-t border-outline-variant/20 dark:border-outline/20">
-        <div className="flex flex-col md:flex-row justify-between items-center py-xl px-margin-page max-w-container-max mx-auto">
-          <div className="text-2xl font-bold text-primary dark:text-tertiary-fixed mb-md md:mb-0">
-            DeliBook
-          </div>
-          <nav className="flex flex-wrap justify-center gap-md mb-md md:mb-0">
-            {["Privacy Policy", "Terms of Service", "Cookie Policy", "Contact Support"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  href="#"
-                  className="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors opacity-80 hover:opacity-100"
-                >
-                  {item}
-                </Link>
-              )
-            )}
-          </nav>
-          <div className="text-on-surface-variant dark:text-on-tertiary-container opacity-80">
-            © 2024 DeliBook. All rights reserved. Built for structured elegance.
-          </div>
-        </div>
-      </footer>
+
     </>
   );
 }

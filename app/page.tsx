@@ -1,96 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const navLinks = [
-  { name: "Home", href: "#", isActive: true },
-  { name: "About Us", href: "#", isActive: false },
-  { name: "Services", href: "#", isActive: false },
-  { name: "Blog", href: "#", isActive: false },
-];
 
-const properties = [
-  {
-    id: 1,
-    title: "Villa Serenity",
-    location: "Santorini, Greece",
-    rating: "4.9",
-    guests: "4 GUESTS",
-    beds: "2 BEDS",
-    price: "$350",
-    image: "https://lh3.googleusercontent.com/aida/ADBb0uhgfl6fC28Wm4QCsMvtTXojezHht6aEGk7v7B3dJ6yJiBe9Z4qM0PqPJtUuzXog7N5dAn43E3EpxrdrLhmSlR2TcgLKeMAlXkEkuTTbN7LqrtYdZX5XnosI9eh5cnOJ980vHcrifSoU4on3pQ5dquc34GUr5oiAFXlXM0fKIv6uVxQn9Uuj6DadQeZbimzbhsj0ypAsY4gbkBle5gLkDSKNlF7FCMlNrzSNGsKavza2kCO0uojCG0bYng",
-  },
-  {
-    id: 2,
-    title: "Azure Coast Resort",
-    location: "Amalfi Coast, Italy",
-    rating: "4.8",
-    guests: "2 GUESTS",
-    beds: "1 BED",
-    price: "$420",
-    image: "https://lh3.googleusercontent.com/aida/ADBb0uhgfl6fC28Wm4QCsMvtTXojezHht6aEGk7v7B3dJ6yJiBe9Z4qM0PqPJtUuzXog7N5dAn43E3EpxrdrLhmSlR2TcgLKeMAlXkEkuTTbN7LqrtYdZX5XnosI9eh5cnOJ980vHcrifSoU4on3pQ5dquc34GUr5oiAFXlXM0fKIv6uVxQn9Uuj6DadQeZbimzbhsj0ypAsY4gbkBle5gLkDSKNlF7FCMlNrzSNGsKavza2kCO0uojCG0bYng",
-  },
-  {
-    id: 3,
-    title: "Urban Loft",
-    location: "New York City, USA",
-    rating: "4.7",
-    guests: "2 GUESTS",
-    beds: "1 BED",
-    price: "$280",
-    image: "https://lh3.googleusercontent.com/aida/ADBb0uhgfl6fC28Wm4QCsMvtTXojezHht6aEGk7v7B3dJ6yJiBe9Z4qM0PqPJtUuzXog7N5dAn43E3EpxrdrLhmSlR2TcgLKeMAlXkEkuTTbN7LqrtYdZX5XnosI9eh5cnOJ980vHcrifSoU4on3pQ5dquc34GUr5oiAFXlXM0fKIv6uVxQn9Uuj6DadQeZbimzbhsj0ypAsY4gbkBle5gLkDSKNlF7FCMlNrzSNGsKavza2kCO0uojCG0bYng",
-  },
-  {
-    id: 4,
-    title: "Coastal Villa",
-    location: "Malibu, USA",
-    rating: "4.9",
-    guests: "6 GUESTS",
-    beds: "3 BEDS",
-    price: "$650",
-    image: "https://lh3.googleusercontent.com/aida/ADBb0uhgfl6fC28Wm4QCsMvtTXojezHht6aEGk7v7B3dJ6yJiBe9Z4qM0PqPJtUuzXog7N5dAn43E3EpxrdrLhmSlR2TcgLKeMAlXkEkuTTbN7LqrtYdZX5XnosI9eh5cnOJ980vHcrifSoU4on3pQ5dquc34GUr5oiAFXlXM0fKIv6uVxQn9Uuj6DadQeZbimzbhsj0ypAsY4gbkBle5gLkDSKNlF7FCMlNrzSNGsKavza2kCO0uojCG0bYng",
-  },
-];
+
+import hotelsData from "../data/hotels.json";
 
 const categories = ["All", "Apartment", "Resort", "Lodge", "Hotel"];
 
 export default function Home() {
   return (
     <>
-      <header className="bg-surface/95 backdrop-blur-md dark:bg-surface-container-highest/95 w-full top-0 z-50 border-b border-outline-variant/30 dark:border-outline/10 shadow-sm dark:shadow-none sticky">
-        <div className="flex justify-between items-center w-full px-gutter h-20 max-w-container-max mx-auto">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold tracking-tight text-primary dark:text-primary-fixed">
-              DeliBook
-            </span>
-          </div>
-          <nav className="hidden md:flex gap-gutter items-center">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`font-button text-button transition-all duration-300 scale-95 active:scale-90 ${
-                  link.isActive
-                    ? "text-primary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed pb-1"
-                    : "text-on-surface-variant dark:text-outline-variant font-medium hover:text-secondary dark:hover:text-secondary-fixed"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-          <div className="flex items-center gap-md">
-            <button className="hidden md:flex items-center justify-center bg-surface-container-lowest text-primary border border-primary px-lg py-sm rounded-lg font-button text-button hover:bg-primary hover:text-on-primary transition-colors">
-              Log in
-            </button>
-            <button
-              aria-label="Language"
-              className="text-on-surface-variant hover:text-secondary transition-colors"
-            >
-              <span className="material-symbols-outlined">language</span>
-            </button>
-          </div>
-        </div>
-      </header>
+
 
       <main className="flex-grow flex flex-col">
         <section className="relative w-full h-[600px] flex items-center justify-center">
@@ -167,20 +87,23 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-            {properties.map((property) => (
-              <article
-                key={property.id}
+            {hotelsData.slice(0, 4).map((hotel: any) => (
+              <Link
+                key={hotel.id}
+                href={`/hotel/${hotel.id}`}
                 className="bg-surface-container-lowest border border-[#0F172A] rounded-lg overflow-hidden flex flex-col group cursor-pointer"
               >
                 <div className="w-full h-48 bg-surface-container relative">
                   <Image
-                    src={property.image}
-                    alt={property.title}
+                    src={hotel.images[0]}
+                    alt={hotel.name}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   />
-                  <button className="absolute top-sm right-sm text-surface-container-lowest hover:text-error transition-colors p-sm bg-primary/20 rounded-full backdrop-blur-sm flex items-center justify-center">
+                  <button
+                    className="absolute top-sm right-sm text-surface-container-lowest hover:text-error transition-colors p-sm bg-primary/20 rounded-full backdrop-blur-sm flex items-center justify-center z-10"
+                  >
                     <span
                       className="material-symbols-outlined"
                       style={{ fontVariationSettings: "'FILL' 0" }}
@@ -192,7 +115,7 @@ export default function Home() {
                 <div className="p-lg flex flex-col gap-sm flex-grow">
                   <div className="flex justify-between items-start">
                     <h3 className="font-h3 text-h3 text-primary truncate">
-                      {property.title}
+                      {hotel.name}
                     </h3>
                     <div className="flex items-center gap-xs text-primary">
                       <span
@@ -202,25 +125,25 @@ export default function Home() {
                         star
                       </span>
                       <span className="font-button text-button">
-                        {property.rating}
+                        {hotel.rating.score.toFixed(1)}
                       </span>
                     </div>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant truncate">
-                    {property.location}
+                    {hotel.city}, {hotel.country}
                   </p>
                   <div className="flex flex-wrap gap-xs mt-auto pt-sm">
-                    <span className="border border-[#0F172A] text-primary px-sm py-xs rounded text-[10px] font-semibold tracking-wider">
-                      {property.guests}
+                    <span className="border border-[#0F172A] text-primary px-sm py-xs rounded text-[10px] font-semibold tracking-wider uppercase">
+                      {hotel.rooms[0]?.capacity || 2} Guests
                     </span>
-                    <span className="border border-[#0F172A] text-primary px-sm py-xs rounded text-[10px] font-semibold tracking-wider">
-                      {property.beds}
+                    <span className="border border-[#0F172A] text-primary px-sm py-xs rounded text-[10px] font-semibold tracking-wider uppercase">
+                      {hotel.rooms[0]?.bedInfo || "1 Bed"}
                     </span>
                   </div>
                   <div className="mt-sm pt-sm border-t border-outline-variant/20 flex justify-between items-end">
                     <div>
                       <span className="font-h3 text-h3 text-primary">
-                        {property.price}
+                        {hotel.currency}{hotel.startingPrice}
                       </span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">
                         /night
@@ -228,35 +151,13 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </section>
       </main>
 
-      <footer className="bg-surface-container-lowest dark:bg-tertiary-container w-full border-t border-outline-variant/20 dark:border-outline/20 mt-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center py-xl px-gutter max-w-container-max mx-auto gap-md">
-          <div className="text-2xl font-bold text-primary dark:text-tertiary-fixed">
-            DeliBook
-          </div>
-          <nav className="flex flex-wrap justify-center gap-lg">
-            {["Privacy Policy", "Terms of Service", "Cookie Policy", "Contact Support"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  href="#"
-                  className="text-on-surface-variant dark:text-on-tertiary-container font-body-md text-body-md hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors opacity-80 hover:opacity-100"
-                >
-                  {item}
-                </Link>
-              )
-            )}
-          </nav>
-          <div className="font-label text-label text-on-surface-variant dark:text-on-tertiary-container text-center md:text-right">
-            © 2024 DeliBook. All rights reserved. Built for structured elegance.
-          </div>
-        </div>
-      </footer>
+
     </>
   );
 }

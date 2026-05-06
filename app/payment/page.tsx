@@ -66,20 +66,7 @@ export default function PaymentPage() {
 
   return (
     <div className="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen pb-xxl selection:bg-primary-container selection:text-on-primary">
-      {/* Top Navigation (Transactional intent) */}
-      <header className="bg-surface-container-lowest border-b border-[#0F172A] h-20 w-full flex items-center px-lg md:px-xl sticky top-0 z-50">
-        <div className="max-w-container-max mx-auto w-full flex justify-between items-center">
-          <Link href="/" className="font-display text-h2 text-[#0F172A] font-bold tracking-tight">
-            DeliBook
-          </Link>
-          <button
-            onClick={() => router.push("/")}
-            className="text-[#0F172A] font-button text-button flex items-center gap-2 hover:opacity-80 transition-opacity"
-          >
-            <X className="w-5 h-5" /> Cancel Booking
-          </button>
-        </div>
-      </header>
+
 
       <main className="max-w-container-max mx-auto px-lg md:px-xl py-xl">
         {/* Stepper */}
