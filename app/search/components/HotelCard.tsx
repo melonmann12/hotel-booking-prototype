@@ -80,7 +80,7 @@ export default function HotelCard({
             href={`/hotel/${id}`}
             className="bg-primary text-on-primary font-button px-lg py-md rounded-DEFAULT hover:opacity-90 transition-opacity"
           >
-            Xem ưu đãi
+            Đặt phòng
           </Link>
         </div>
       </div>
