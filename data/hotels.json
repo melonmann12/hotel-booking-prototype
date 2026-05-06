@@ -1,0 +1,84 @@
+[
+    {
+        "id": "grand-hotel-milan",
+        "name": "Grand Hotel Milan",
+        "stars": 5,
+        "address": "Via Manzoni 31, 20121 Milan, Italy",
+        "city": "Milan",
+        "country": "Italy",
+        "startingPrice": 280,
+        "currency": "€",
+        "description": "Experience unparalleled luxury in the heart of Milan. Grand Hotel Milan seamlessly blends 19th-century elegance with contemporary design. Located just steps away from the iconic Duomo and the prestigious Montenapoleone shopping district, it offers a serene oasis amidst the vibrant city...",
+        "images": [
+            "/images/hotels/milan-1.jpg",
+            "/images/hotels/milan-2.jpg",
+            "/images/hotels/milan-3.jpg",
+            "/images/hotels/milan-4.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "Swimming Pool",
+                "icon": "Waves"
+            },
+            {
+                "label": "Spa & Wellness",
+                "icon": "Flower2"
+            },
+            {
+                "label": "24/7 Front Desk",
+                "icon": "Clock"
+            },
+            {
+                "label": "Fitness Center",
+                "icon": "Dumbbell"
+            },
+            {
+                "label": "Bar & Lounge",
+                "icon": "GlassWater"
+            }
+        ],
+        "rating": {
+            "score": 9.2,
+            "label": "Superb",
+            "reviewCount": 1240
+        },
+        "featuredReviews": [
+            {
+                "userName": "Sarah J.",
+                "date": "Oct 2023",
+                "comment": "Absolutely stunning property. The staff went above and beyond to make our anniversary special. The location couldn't be better for..."
+            },
+            {
+                "userName": "Michael T.",
+                "date": "Sep 2023",
+                "comment": "The spa facilities are world-class. Breakfast buffet was extensive and high quality. Rooms are quiet despite the central location."
+            }
+        ],
+        "rooms": [
+            {
+                "id": "room-001",
+                "type": "Deluxe King",
+                "bedInfo": "1 Extra-large double bed",
+                "capacity": 2,
+                "options": [
+                    "Free Wi-Fi",
+                    "Breakfast included",
+                    "Non-smoking"
+                ],
+                "price": 280
+            },
+            {
+                "id": "room-002",
+                "type": "Executive Suite",
+                "bedInfo": "1 Extra-large double bed + Sofa bed",
+                "capacity": 3,
+                "options": [
+                    "Free Wi-Fi",
+                    "Breakfast included",
+                    "City View"
+                ],
+                "price": 450
+            }
+        ]
+    }
+]
