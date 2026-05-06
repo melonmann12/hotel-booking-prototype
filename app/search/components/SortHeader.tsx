@@ -1,6 +1,14 @@
 import { Search } from "lucide-react";
 
-export default function SortHeader() {
+interface SortHeaderProps {
+  summary?: string;
+  resultCount?: number;
+}
+
+export default function SortHeader({
+  summary = "Tất cả khách sạn",
+  resultCount,
+}: SortHeaderProps) {
   return (
     <>
       {/* Top Bar / Search Summary */}
@@ -8,12 +16,14 @@ export default function SortHeader() {
         <div className="flex items-center gap-sm">
           <Search className="w-6 h-6 text-primary" />
           <h2 className="font-h2 text-primary">
-            Milan, Italy | Nov 04 - Dec 04 | 2 Người lớn, 1 Trẻ em
+            {summary}
+            {resultCount !== undefined && (
+              <span className="font-body-md text-on-surface-variant ml-sm">
+                ({resultCount} kết quả)
+              </span>
+            )}
           </h2>
         </div>
-        <button className="border border-primary text-primary font-button px-md py-sm rounded-DEFAULT hover:bg-primary hover:text-on-primary transition-colors">
-          Sửa tìm kiếm
-        </button>
       </div>
 
       {/* Sorting Tabs */}

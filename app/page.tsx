@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import hotelsData from "../data/hotels.json";
 import { formatCurrency } from "@/lib/format";
+import SearchBar from "@/components/SearchBar";
 
 const categories = ["Tất cả", "Căn hộ", "Khu nghỉ dưỡng", "Nhà nghỉ", "Khách sạn"];
 
@@ -26,45 +27,10 @@ export default function Home() {
             <div className="absolute inset-0 bg-primary/20"></div>
           </div>
           <div className="relative z-10 w-full max-w-container-max mx-auto px-gutter flex flex-col items-center">
-            <div className="bg-surface-container-lowest rounded-full p-sm flex flex-col md:flex-row items-center w-full max-w-4xl shadow-md border border-primary/10">
-              <div className="flex-1 w-full md:w-auto px-lg py-sm border-b md:border-b-0 md:border-r border-outline-variant/30">
-                <label className="block font-label text-label text-on-surface-variant mb-xs">
-                  Điểm đến
-                </label>
-                <input
-                  className="w-full bg-transparent border-none p-0 focus:ring-0 font-body-lg text-body-lg text-primary placeholder-on-surface-variant/50 outline-none"
-                  placeholder="Tìm điểm đến"
-                  type="text"
-                />
-              </div>
-              <div className="flex-1 w-full md:w-auto px-lg py-sm border-b md:border-b-0 md:border-r border-outline-variant/30">
-                <label className="block font-label text-label text-on-surface-variant mb-xs">
-                  Ngày
-                </label>
-                <input
-                  className="w-full bg-transparent border-none p-0 focus:ring-0 font-body-lg text-body-lg text-primary placeholder-on-surface-variant/50 outline-none"
-                  placeholder="Thêm ngày"
-                  type="text"
-                />
-              </div>
-              <div className="flex-1 w-full md:w-auto px-lg py-sm flex items-center justify-between">
-                <div>
-                  <label className="block font-label text-label text-on-surface-variant mb-xs">
-                    Khách
-                  </label>
-                  <input
-                    className="w-full bg-transparent border-none p-0 focus:ring-0 font-body-lg text-body-lg text-primary placeholder-on-surface-variant/50 outline-none"
-                    placeholder="Thêm khách"
-                    type="text"
-                  />
-                </div>
-                <Link href="/search" className="bg-[#0F172A] text-on-primary w-12 h-12 rounded-full flex items-center justify-center hover:opacity-90 transition-opacity flex-shrink-0">
-                  <span className="material-symbols-outlined">search</span>
-                </Link>
-              </div>
-            </div>
+            <SearchBar variant="hero" />
           </div>
         </section>
+
 
         <section className="w-full max-w-container-max mx-auto px-gutter py-xxl flex flex-col gap-xl">
           <div className="flex flex-col gap-md">

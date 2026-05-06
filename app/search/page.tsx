@@ -1,45 +1,58 @@
-import Link from "next/link";
-import FilterSidebar from "./components/FilterSidebar";
-import SortHeader from "./components/SortHeader";
-import HotelCard from "./components/HotelCard";
-
-
+import SearchBar from "@/components/SearchBar";
+import SearchResultsClient from "./components/SearchResultsClient";
 
 import hotelsData from "../../data/hotels.json";
-import { formatCurrency } from "@/lib/format";
+import { normalizeVietnamese } from "@/lib/format";
 
-export default function SearchPage() {
+export default async function SearchPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const params = await searchParams;
+  const cityQuery = typeof params.city === "string" ? params.city : "";
+  const dateQuery = typeof params.date === "string" ? params.date : "";
+  const guestsQuery = typeof params.guests === "string" ? params.guests : "";
+
+  // Filter hotels by city from the search bar — accent-insensitive, case-insensitive
+  const searchBarFilteredHotels = cityQuery.trim()
+    ? hotelsData.filter((hotel: any) => {
+        const normalizedQuery = normalizeVietnamese(cityQuery);
+        const normalizedCity = normalizeVietnamese(hotel.city);
+        return normalizedCity.includes(normalizedQuery);
+      })
+    : hotelsData;
+
+  // Build a search summary string for the SortHeader
+  const summaryParts: string[] = [];
+  if (cityQuery.trim()) summaryParts.push(cityQuery.trim());
+  if (dateQuery.trim()) summaryParts.push(dateQuery.trim());
+  if (guestsQuery.trim()) summaryParts.push(guestsQuery.trim());
+  const searchSummary =
+    summaryParts.length > 0
+      ? summaryParts.join(" | ")
+      : "Tất cả khách sạn";
+
   return (
     <>
-
-
       <main className="flex-grow w-full max-w-container-max mx-auto px-lg py-lg grid grid-cols-1 md:grid-cols-12 gap-gutter">
-        <FilterSidebar />
+        {/* Search Bar spans full width above the grid — pre-filled with current params */}
+        <div className="col-span-1 md:col-span-12">
+          <SearchBar
+            variant="compact"
+            initialCity={cityQuery}
+            initialDate={dateQuery}
+            initialGuests={guestsQuery}
+          />
+        </div>
 
-        <section className="col-span-1 md:col-span-9 space-y-lg">
-          <SortHeader />
-
-          <div className="space-y-md">
-            {hotelsData.map((hotel: any) => (
-              <HotelCard
-                key={hotel.id}
-                id={hotel.id}
-                title={hotel.name}
-                location={hotel.address}
-                stars={hotel.stars}
-                rating={hotel.rating.score.toFixed(1)}
-                ratingLabel={hotel.rating.label}
-                reviews={`${hotel.rating.reviewCount.toLocaleString()} đánh giá`}
-                badges={hotel.amenities.slice(0, 2).map((a: any) => a.label)}
-                price={formatCurrency(hotel.startingPrice)}
-                image={hotel.images[0]}
-              />
-            ))}
-          </div>
-        </section>
+        {/* FilterSidebar + Hotel list — managed by client component for interactive filters */}
+        <SearchResultsClient
+          hotels={searchBarFilteredHotels}
+          searchSummary={searchSummary}
+          cityQuery={cityQuery}
+        />
       </main>
-
-
     </>
   );
 }

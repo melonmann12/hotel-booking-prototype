@@ -1,6 +1,53 @@
+"use client";
+
 import { Star } from "lucide-react";
 
-export default function FilterSidebar() {
+// Available Vietnamese cities from the JSON data
+const CITIES = [
+  "Hà Nội",
+  "Đà Lạt",
+  "Đà Nẵng",
+  "Côn Đảo",
+  "Hồ Chí Minh",
+  "Vĩnh Phúc",
+];
+
+const SMART_FILTERS = ["Miễn phí hủy phòng", "Bao gồm bữa sáng"];
+const STAR_RATINGS = [5, 4, 3];
+const AMENITIES = ["Hồ bơi", "Spa", "Nhà hàng", "Wi-Fi", "Phòng gym"];
+
+interface FilterSidebarProps {
+  selectedStars: number[];
+  selectedCities: string[];
+  selectedSmartFilters: string[];
+  selectedAmenities: string[];
+  onToggleStar: (star: number) => void;
+  onToggleCity: (city: string) => void;
+  onToggleSmartFilter: (filter: string) => void;
+  onToggleAmenity: (amenity: string) => void;
+  /** Count of hotels that pass all active filters */
+  activeFilterCount: number;
+  onClearAll: () => void;
+}
+
+export default function FilterSidebar({
+  selectedStars,
+  selectedCities,
+  selectedSmartFilters,
+  selectedAmenities,
+  onToggleStar,
+  onToggleCity,
+  onToggleSmartFilter,
+  onToggleAmenity,
+  activeFilterCount,
+  onClearAll,
+}: FilterSidebarProps) {
+  const hasActiveFilters =
+    selectedStars.length > 0 ||
+    selectedCities.length > 0 ||
+    selectedSmartFilters.length > 0 ||
+    selectedAmenities.length > 0;
+
   return (
     <aside className="col-span-1 md:col-span-3 space-y-lg hidden md:block">
       {/* Price Alert */}
@@ -19,14 +66,26 @@ export default function FilterSidebar() {
         </div>
       </div>
 
+      {/* Clear All Filters */}
+      {hasActiveFilters && (
+        <button
+          onClick={onClearAll}
+          className="w-full text-center font-button text-button text-primary border border-primary rounded-lg py-sm px-md hover:bg-primary hover:text-on-primary transition-colors"
+        >
+          Xóa tất cả bộ lọc ({activeFilterCount})
+        </button>
+      )}
+
       {/* Smart Filters */}
       <div className="border-t border-outline-variant/30 pt-md">
         <h4 className="font-h3 text-primary mb-sm">Bộ lọc thông minh</h4>
         <div className="space-y-sm">
-          {["Miễn phí hủy phòng", "Bao gồm bữa sáng"].map((filter) => (
+          {SMART_FILTERS.map((filter) => (
             <label key={filter} className="flex items-center gap-sm cursor-pointer group">
               <input
                 type="checkbox"
+                checked={selectedSmartFilters.includes(filter)}
+                onChange={() => onToggleSmartFilter(filter)}
                 className="rounded-DEFAULT border-primary text-primary focus:ring-primary w-4 h-4 cursor-pointer"
               />
               <span className="font-body-md group-hover:text-primary transition-colors">
@@ -41,10 +100,12 @@ export default function FilterSidebar() {
       <div className="border-t border-outline-variant/30 pt-md">
         <h4 className="font-h3 text-primary mb-sm">Xếp hạng sao</h4>
         <div className="space-y-sm">
-          {[5, 4, 3].map((rating) => (
+          {STAR_RATINGS.map((rating) => (
             <label key={rating} className="flex items-center gap-sm cursor-pointer group">
               <input
                 type="checkbox"
+                checked={selectedStars.includes(rating)}
+                onChange={() => onToggleStar(rating)}
                 className="rounded-DEFAULT border-primary text-primary focus:ring-primary w-4 h-4 cursor-pointer"
               />
               <span className="font-body-md flex items-center group-hover:text-primary transition-colors">
@@ -55,21 +116,23 @@ export default function FilterSidebar() {
         </div>
       </div>
 
-      {/* Neighborhoods */}
+      {/* Locations (Cities) */}
       <div className="border-t border-outline-variant/30 pt-md">
         <h4 className="font-h3 text-primary mb-sm">Khu vực</h4>
         <div className="space-y-sm">
-          {["Brera", "Navigli", "Centro Storico"].map((neighborhood) => (
+          {CITIES.map((city) => (
             <label
-              key={neighborhood}
+              key={city}
               className="flex items-center gap-sm cursor-pointer group"
             >
               <input
                 type="checkbox"
+                checked={selectedCities.includes(city)}
+                onChange={() => onToggleCity(city)}
                 className="rounded-DEFAULT border-primary text-primary focus:ring-primary w-4 h-4 cursor-pointer"
               />
               <span className="font-body-md group-hover:text-primary transition-colors">
-                {neighborhood}
+                {city}
               </span>
             </label>
           ))}
@@ -80,19 +143,19 @@ export default function FilterSidebar() {
       <div className="border-t border-outline-variant/30 pt-md">
         <h4 className="font-h3 text-primary mb-sm">Tiện nghi</h4>
         <div className="space-y-sm">
-          {["Hồ bơi", "Wi-Fi miễn phí", "Phòng gym", "Bãi đậu xe"].map(
-            (amenity) => (
-              <label key={amenity} className="flex items-center gap-sm cursor-pointer group">
-                <input
-                  type="checkbox"
-                  className="rounded-DEFAULT border-primary text-primary focus:ring-primary w-4 h-4 cursor-pointer"
-                />
-                <span className="font-body-md group-hover:text-primary transition-colors">
-                  {amenity}
-                </span>
-              </label>
-            )
-          )}
+          {AMENITIES.map((amenity) => (
+            <label key={amenity} className="flex items-center gap-sm cursor-pointer group">
+              <input
+                type="checkbox"
+                checked={selectedAmenities.includes(amenity)}
+                onChange={() => onToggleAmenity(amenity)}
+                className="rounded-DEFAULT border-primary text-primary focus:ring-primary w-4 h-4 cursor-pointer"
+              />
+              <span className="font-body-md group-hover:text-primary transition-colors">
+                {amenity}
+              </span>
+            </label>
+          ))}
         </div>
       </div>
     </aside>
