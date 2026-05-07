@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check, Copy, Mail, MapPin, Printer } from "lucide-react";
 import { useRouter } from "next/navigation";
+import BookingStepper from "@/components/BookingStepper";
+import { formatCurrency } from "@/lib/format";
 
 export default function BookingSuccessPage() {
   const router = useRouter();
@@ -30,7 +32,11 @@ export default function BookingSuccessPage() {
     <div className="bg-surface-container-lowest text-on-background font-body-md antialiased min-h-screen flex flex-col">
       <main className="flex-grow flex items-center justify-center py-xxl px-gutter">
         <div className="max-w-3xl w-full flex flex-col items-center text-center space-y-xl animate-in fade-in slide-in-from-bottom-4 duration-500">
-          
+
+          {/* Progress Stepper */}
+          <div className="w-full">
+            <BookingStepper currentStep={3} />
+          </div>
           {/* 1. Success Indicator */}
           <div className="flex flex-col items-center space-y-lg">
             <div className="w-24 h-24 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
@@ -64,7 +70,8 @@ export default function BookingSuccessPage() {
           <div className="flex items-center space-x-sm text-on-surface-variant font-body-md text-body-md bg-surface-container-low py-sm px-md rounded-full">
             <Mail className="w-5 h-5 text-primary-container" />
             <span>
-              Voucher xác nhận và biên lai đã được gửi đến <strong>user@example.com</strong>
+              Voucher xác nhận và biên lai đã được gửi đến{" "}
+              <strong>{booking.email || "khách hàng"}</strong>
             </span>
           </div>
 
@@ -85,7 +92,7 @@ export default function BookingSuccessPage() {
               <div>
                 <h2 className="font-h2 text-h2 text-on-background">{booking.hotelName}</h2>
                 <p className="font-body-sm text-body-sm text-on-surface-variant flex items-center mt-xs">
-                  <MapPin className="w-4 h-4 mr-xs" /> Via Manzoni 31, Milan
+                  <MapPin className="w-4 h-4 mr-xs" /> {booking.address || "Việt Nam"}
                 </p>
               </div>
               
@@ -117,7 +124,7 @@ export default function BookingSuccessPage() {
                     Tổng đã thanh toán
                   </span>
                   <span className="font-h3 text-h3 text-primary-container">
-                    {booking.currency}{booking.total.toFixed(2)}
+                    {formatCurrency(booking.total)}
                   </span>
                 </div>
               </div>

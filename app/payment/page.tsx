@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check, X, CreditCard, Lock } from "lucide-react";
 import { formatCurrency } from "@/lib/format";
+import BookingStepper from "@/components/BookingStepper";
 
 export default function PaymentPage() {
   const router = useRouter();
@@ -71,28 +72,7 @@ export default function PaymentPage() {
 
       <main className="max-w-container-max mx-auto px-lg md:px-xl py-xl">
         {/* Stepper */}
-        <div className="w-full flex justify-center mb-xl">
-          <ol className="flex items-center w-full max-w-2xl text-center font-button text-button">
-            <li className="flex items-center text-on-surface-variant after:content-[''] after:w-full after:h-px after:border-b after:border-outline-variant after:mx-4">
-              <span className="flex items-center justify-center w-8 h-8 bg-surface-container rounded-full shrink-0 mr-2">
-                <Check className="w-4 h-4 text-[#0F172A]" />
-              </span>
-              <span className="hidden sm:inline">1. Thông tin khách</span>
-            </li>
-            <li className="flex items-center text-[#0F172A] font-bold after:content-[''] after:w-full after:h-px after:border-b after:border-outline-variant after:mx-4">
-              <span className="flex items-center justify-center w-8 h-8 bg-[#0F172A] text-on-primary rounded-full shrink-0 mr-2">
-                2
-              </span>
-              <span className="hidden sm:inline">2. Thanh toán</span>
-            </li>
-            <li className="flex items-center text-on-surface-variant">
-              <span className="flex items-center justify-center w-8 h-8 bg-surface-container rounded-full shrink-0 mr-2">
-                3
-              </span>
-              <span className="hidden sm:inline">3. Xác nhận</span>
-            </li>
-          </ol>
-        </div>
+        <BookingStepper currentStep={2} />
 
         <div className="flex flex-col lg:flex-row gap-gutter">
           {/* Left Column: Payment Methods (60%) */}

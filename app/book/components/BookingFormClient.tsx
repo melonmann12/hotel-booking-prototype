@@ -12,6 +12,7 @@ interface BookingFormClientProps {
   image: string;
   pricePerNight: number;
   currency: string;
+  address: string;
   initialCheckIn?: string;
   initialCheckOut?: string;
 }
@@ -22,11 +23,13 @@ export default function BookingFormClient({
   image,
   pricePerNight,
   currency,
+  address,
   initialCheckIn,
   initialCheckOut,
 }: BookingFormClientProps) {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [email, setEmail] = useState("");
 
   const [checkIn, setCheckIn] = useState(initialCheckIn || "2024-10-15");
   const [checkOut, setCheckOut] = useState(initialCheckOut || "2024-10-17");
@@ -51,6 +54,8 @@ export default function BookingFormClient({
       hotelName,
       roomType,
       image,
+      address,
+      email,
       checkIn,
       checkOut,
       nights,
@@ -108,6 +113,8 @@ export default function BookingFormClient({
                   id="email"
                   placeholder="john.doe@example.com"
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
