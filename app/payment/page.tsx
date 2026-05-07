@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, X, CreditCard, Lock } from "lucide-react";
+import { Check, X, CreditCard, Lock, AlertCircle } from "lucide-react";
 import { formatCurrency } from "@/lib/format";
 import BookingStepper from "@/components/BookingStepper";
 
@@ -13,6 +13,8 @@ export default function PaymentPage() {
   const [booking, setBooking] = useState<any>(null);
   const [paymentMethod, setPaymentMethod] = useState("card");
   const [isProcessing, setIsProcessing] = useState(false);
+  const [processingLabel, setProcessingLabel] = useState("Đang xử lý thanh toán...");
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   // Form states
   const [cardNumber, setCardNumber] = useState("");
@@ -49,17 +51,47 @@ export default function PaymentPage() {
     setCvv(value);
   };
 
-  const handleCompletePayment = () => {
+  const handleCompletePayment = async () => {
+    if (!booking) return;
     setIsProcessing(true);
-    // Simulate payment processing
-    setTimeout(() => {
-      if (booking) {
-        const completedBooking = { ...booking, status: "Paid" };
-        localStorage.setItem("delibook_booking", JSON.stringify(completedBooking));
+    setErrorMsg(null);
+
+    try {
+      // Phase 1 — send confirmation email
+      setProcessingLabel("Đang gửi email xác nhận...");
+      const emailRes = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: booking.email ?? "",
+          customerName: booking.customerName ?? booking.guestName ?? "Quý khách",
+          hotelName: booking.hotelName,
+          checkIn: booking.checkIn,
+          checkOut: booking.checkOut,
+          totalPrice: formatCurrency(booking.total),
+        }),
+      });
+
+      if (!emailRes.ok) {
+        const errData = await emailRes.json().catch(() => ({}));
+        console.warn("[payment] Email API error:", errData);
+        // Non-blocking: we still proceed but surface a warning
       }
+
+      // Phase 2 — persist paid status and navigate
+      setProcessingLabel("Hoàn tất, đang chuyển trang...");
+      const completedBooking = { ...booking, status: "Paid" };
+      localStorage.setItem("delibook_booking", JSON.stringify(completedBooking));
+
       router.push("/booking-success");
-    }, 2000);
+    } catch (err) {
+      console.error("[payment] Unexpected error:", err);
+      setErrorMsg("Có lỗi xảy ra khi xử lý thanh toán. Vui lòng thử lại.");
+      setIsProcessing(false);
+      setProcessingLabel("Đang xử lý thanh toán...");
+    }
   };
+
 
   if (!booking) return null; // Avoid hydration mismatch or flashing content
 
@@ -202,6 +234,14 @@ export default function PaymentPage() {
               </div>
             </div>
 
+            {/* Error Banner */}
+            {errorMsg && (
+              <div className="flex items-center gap-sm bg-red-50 border border-red-200 text-red-700 rounded-lg px-md py-sm mt-lg text-sm">
+                <AlertCircle className="w-4 h-4 shrink-0" />
+                <span>{errorMsg}</span>
+              </div>
+            )}
+
             {/* Call to Action */}
             <button
               onClick={handleCompletePayment}
@@ -214,10 +254,11 @@ export default function PaymentPage() {
                 <Lock className="w-5 h-5" />
               )}
               {isProcessing
-                ? "Đang xử lý thanh toán..."
+                ? processingLabel
                 : `Hoàn tất thanh toán - ${formatCurrency(booking.total)}`}
             </button>
           </div>
+
 
           {/* Right Column: Order Summary (40%) */}
           <div className="w-full lg:w-2/5">
