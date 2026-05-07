@@ -48,7 +48,7 @@ export default function SearchBar({
             </label>
             <input
               className="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-body-md text-primary placeholder-on-surface-variant/50 outline-none"
-              placeholder="Tìm điểm đến"
+              placeholder="Tìm điểm đến (thành phố)"
               type="text"
               value={city}
               onChange={(e) => setCity(e.target.value)}
@@ -103,7 +103,7 @@ export default function SearchBar({
         </label>
         <input
           className="w-full bg-transparent border-none p-0 focus:ring-0 font-body-lg text-body-lg text-primary placeholder-on-surface-variant/50 outline-none"
-          placeholder="Tìm điểm đến"
+          placeholder="Tìm điểm đến (thành phố)"
           type="text"
           value={city}
           onChange={(e) => setCity(e.target.value)}
