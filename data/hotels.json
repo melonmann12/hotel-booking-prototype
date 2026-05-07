@@ -8,6 +8,7 @@
         "country": "Việt Nam",
         "startingPrice": 21250000,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Khu nghỉ dưỡng 5 sao đầu tiên và duy nhất tại Côn Đảo thuộc phân khúc sang trọng, chăm sóc sức khỏe và sinh thái. Khẩu hiệu của nơi này là 'Một thế giới khác biệt so với cuộc sống thường nhật'. Resort có bãi biển riêng dài 1,6km và đã thả 30.000 rùa con về biển.",
         "images": [
             "/images/hotels/six-senses-2.jpg",
@@ -55,6 +56,81 @@
         ]
     },
     {
+        "id": "regalia-gold-nha-trang",
+        "name": "Regalia Gold Hotel Nha Trang",
+        "stars": 5,
+        "address": "39-41 Nguyễn Thị Minh Khai, Tân Lập, Nha Trang, Khánh Hòa",
+        "city": "Nha Trang",
+        "country": "Việt Nam",
+        "startingPrice": 850000,
+        "currency": "VNĐ",
+        "vrLink": "https://regalia-gold.vercel.app/",
+        "description": "Khách sạn Regalia Gold mang phong cách kiến trúc hiện đại và sang trọng với tòa nhà 40 tầng gồm 661 phòng nghỉ tiêu chuẩn 5 sao. Tọa lạc tại vị trí đắc địa ngay trung tâm thành phố, khách sạn gây ấn tượng mạnh với hồ bơi vô cực tại tầng 41, mang đến tầm nhìn bao quát toàn cảnh vịnh Nha Trang nên thơ.",
+        "images": [
+            "/images/hotels/regalia-gold-4.jpg",
+            "/images/hotels/regalia-gold-1.jpg",
+            "/images/hotels/regalia-gold-2.jpg",
+            "/images/hotels/regalia-gold-3.jpg",
+            "/images/hotels/regalia-gold-5.jpg"
+        ],
+        "amenities": [
+            {
+                "label": "Hồ bơi vô cực (Tầng 41)",
+                "icon": "Waves"
+            },
+            {
+                "label": "Regalia Spa",
+                "icon": "Flower2"
+            },
+            {
+                "label": "Trung tâm thể hình",
+                "icon": "Dumbbell"
+            },
+            {
+                "label": "Nhà hàng & Bar",
+                "icon": "Utensils"
+            }
+        ],
+        "rating": {
+            "score": 8.8,
+            "label": "Rất tốt",
+            "reviewCount": 1552
+        },
+        "featuredReviews": [
+            {
+                "userName": "Minh Tuấn",
+                "date": "Tháng 3, 2026",
+                "comment": "Khách sạn rất đẹp, đặc biệt là hồ bơi vô cực trên tầng thượng view cực đỉnh. Phòng sạch sẽ và nhân viên hỗ trợ nhiệt tình."
+            }
+        ],
+        "rooms": [
+            {
+                "id": "rg-std-01",
+                "type": "Phòng Standard có cửa sổ",
+                "bedInfo": "2 giường đôi",
+                "capacity": 2,
+                "options": [
+                    "Wifi miễn phí",
+                    "Bao gồm bữa sáng",
+                    "Điều hòa không khí"
+                ],
+                "price": 850000
+            },
+            {
+                "id": "rg-dlx-02",
+                "type": "Phòng Deluxe có ban công",
+                "bedInfo": "1 giường King lớn",
+                "capacity": 2,
+                "options": [
+                    "View thành phố",
+                    "Ban công riêng",
+                    "Bao gồm bữa sáng"
+                ],
+                "price": 1250000
+            }
+        ]
+    },
+    {
         "id": "flamingo-dai-lai",
         "name": "Flamingo Đại Lải Resort",
         "stars": 5,
@@ -63,6 +139,7 @@
         "country": "Việt Nam",
         "startingPrice": 3500000,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Nằm phía Bắc hồ Đại Lải, khu nghỉ dưỡng sinh thái mang kiến trúc xanh này đã nhận hơn 60 giải thưởng trong và ngoài nước. Nơi đây cách trung tâm Hà Nội khoảng 50km.",
         "images": [
             "/images/hotels/flamingo-2.jpg",
@@ -116,6 +193,7 @@
         "country": "Việt Nam",
         "startingPrice": 12000000,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Khu nghỉ dưỡng siêu sang do Bill Bensley thiết kế với kiến trúc 4 tầng: Heaven, Sky, Earth, Sea. Khu nghỉ dưỡng có vị trí tựa sơn hướng thủy và bãi biển riêng dài 750m.",
         "images": [
             "/images/hotels/inter-dn-4.jpg",
@@ -166,6 +244,7 @@
         "country": "Việt Nam",
         "startingPrice": 6500000,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Khách sạn sang trọng mang phong cách Pháp cổ với nội thất cổ điển và tầm nhìn ra phố cổ Hà Nội. Khách sạn cung cấp nhà hàng Pháp Le Beaulieu, hồ bơi ngoài trời và dịch vụ phòng 24/7.",
         "images": [
             "/images/hotels/metropole-1.jpg",
@@ -216,6 +295,7 @@
         "country": "Việt Nam",
         "startingPrice": 3200000,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Nằm trên tầng cao, khách sạn cung cấp tầm nhìn toàn cảnh Hà Nội. Tại đây có trung tâm thương mại, sky bar, hồ bơi, gym và spa.",
         "images": [
             "/images/hotels/lotte-1.webp",
@@ -266,6 +346,7 @@
         "country": "Việt Nam",
         "startingPrice": 4000000,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Khách sạn sang trọng, hiện đại với không gian rộng lớn, cung cấp tầm nhìn ra hồ và trung tâm hội nghị. Tại đây có 6 nhà hàng, quầy bar, hồ bơi trong nhà và spa.",
         "images": [
             "/images/hotels/jw-1.jpg",
@@ -315,6 +396,7 @@
         "country": "Việt Nam",
         "startingPrice": 750000,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Nhà nghỉ cung cấp dịch vụ tự check-in bằng mã khóa và phòng hướng phố Quận 1 năng động. Các phòng đều có bếp nhỏ nấu ăn, điều hòa và Tivi thông minh.",
         "images": [
             "/images/hotels/cozrum-1.jpg",
@@ -360,6 +442,7 @@
         "country": "Việt Nam",
         "startingPrice": 600000,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Homestay cung cấp tầm nhìn hướng ra thung lũng rừng thông bạt ngàn. Nơi đây có bồn tắm gỗ lộ thiên, dịch vụ cafe sáng miễn phí và khu vực đốt lửa trại buổi tối.",
         "images": [
             "/images/hotels/kupid-1.jpeg",
@@ -405,6 +488,7 @@
         "country": "Việt Nam",
         "startingPrice": 1100000,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Khách sạn nằm ngay trung tâm với tầm nhìn hướng phố Đào Duy Từ cổ kính. Nơi đây cung cấp bữa sáng buffet và các phòng được trang bị bồn tắm nằm cùng két sắt an toàn.",
         "images": [
             "/images/hotels/allure-5.jpg",
@@ -450,6 +534,7 @@
         "country": "Việt Nam",
         "startingPrice": 1300000,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Cách Phủ Thành Chương 3.2 km, chỗ nghỉ có hồ bơi ngoài trời, khu vườn và cung cấp các bữa ăn Bít-tết cũng như món Việt. Các phòng tại đây có sân trong và tầm nhìn ra núi.",
         "images": [
             "/images/hotels/ulesa-1.jpg",
@@ -500,6 +585,7 @@
         "country": "Việt Nam",
         "startingPrice": 730000,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Homestay nằm cách Vườn hoa Đà Lạt 4.9 km, cung cấp khu vườn, sân hiên và bếp chung. Các phòng được trang bị ban công hoặc sân trong nhìn ra khung cảnh đồi núi xung quanh.",
         "images": [
             "/images/hotels/september-1.jpg",
@@ -546,6 +632,7 @@
         "country": "Việt Nam",
         "startingPrice": 563037,
         "currency": "VNĐ",
+        "vrLink": "",
         "description": "Cách Thiền Viện Trúc Lâm 5.4 km, chỗ nghỉ này cung cấp khu vườn, sân hiên, khu vực picnic và bếp chung. Nơi đây đặc biệt cho phép mang theo vật nuôi mà không tính thêm phí.",
         "images": [
             "/images/hotels/nhacui-2.jpg",

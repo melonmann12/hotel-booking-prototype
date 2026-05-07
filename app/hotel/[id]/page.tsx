@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { promises as fs } from "fs";
 import path from "path";
-import { icons, MapPin, Grid, Star, PersonStanding, Check } from "lucide-react";
+import { icons, MapPin, Grid, Star, PersonStanding, Check, Rotate3d } from "lucide-react";
 import { formatCurrency } from "@/lib/format";
 
 async function getHotel(id: string) {
@@ -147,6 +147,34 @@ export default async function HotelDetailPage({
             >
               Chọn phòng
             </a>
+
+            {/* VR 360 Button */}
+            <div className="mt-md">
+              {hotel.vrLink ? (
+                <a
+                  href={hotel.vrLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-sm mt-sm border-2 border-primary bg-surface text-primary font-button text-button py-md px-xl rounded-lg w-full md:w-auto hover:bg-primary hover:text-on-primary transition-all duration-300 group"
+                >
+                  <Rotate3d className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" />
+                  Xem VR 360°
+                </a>
+              ) : (
+                <div className="text-left md:text-right">
+                  <button
+                    disabled
+                    className="inline-flex items-center justify-center gap-sm mt-sm border-2 border-outline/30 bg-surface-container text-on-surface-variant font-button text-button py-md px-xl rounded-lg w-full md:w-auto opacity-50 grayscale cursor-not-allowed"
+                  >
+                    <Rotate3d className="w-5 h-5" />
+                    Xem VR 360°
+                  </button>
+                  <p className="mt-xs font-body-sm text-body-sm text-on-surface-variant italic">
+                    Hiện chưa hỗ trợ xem VR cho khách sạn này
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 

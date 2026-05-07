@@ -16,6 +16,7 @@ interface Hotel {
   country: string;
   startingPrice: number;
   currency: string;
+  vrLink?: string;
   description: string;
   images: string[];
   amenities: { label: string; icon: string }[];
