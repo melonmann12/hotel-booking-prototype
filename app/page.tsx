@@ -6,8 +6,7 @@ import Link from "next/link";
 import hotelsData from "../data/hotels.json";
 import { formatCurrency } from "@/lib/format";
 import SearchBar from "@/components/SearchBar";
-
-const categories = ["Tất cả", "Căn hộ", "Khu nghỉ dưỡng", "Nhà nghỉ", "Khách sạn"];
+import CategoryFilter from "@/components/CategoryFilter";
 
 export default function Home() {
   return (
@@ -45,19 +44,7 @@ export default function Home() {
             <h1 className="font-h1 text-h1 text-primary">
               Nơi sự thoải mái hội tụ cùng tiện nghi
             </h1>
-            <div className="flex flex-wrap gap-sm">
-              {categories.map((category, index) => (
-                <button
-                  key={category}
-                  className={`px-md py-sm rounded-full font-button text-button transition-colors ${index === 0
-                    ? "bg-[#0F172A] text-on-primary"
-                    : "bg-surface-container-lowest text-primary border border-primary hover:bg-[#0F172A] hover:text-on-primary"
-                    }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+            <CategoryFilter />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
