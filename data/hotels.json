@@ -59,6 +59,17 @@
                     "Butler 24/7"
                 ],
                 "price": 21250000
+            },
+            {
+                "id": "room-ssc-02",
+                "type": "Biệt thự khu vui chơi trẻ em",
+                "bedInfo": "1 phòng ngủ",
+                "capacity": 2,
+                "options": [
+                    "Khu vui chơi trẻ em riêng",
+                    "Butler 24/7"
+                ],
+                "price": 12500000
             }
         ]
     },
@@ -222,6 +233,31 @@
                     "Tối đa 2 người lớn + 1 trẻ em"
                 ],
                 "price": 3500000
+            },
+            {
+                "id": "room-fla-02",
+                "type": "Villa 2 phòng ngủ hướng hồ",
+                "bedInfo": "2 giường đôi",
+                "capacity": 4,
+                "options": [
+                    "Tầm nhìn trực diện hồ Đại Lải",
+                    "Phòng khách riêng biệt",
+                    "Sân hiên ngoài trời",
+                    "Tối đa 4 người lớn + 2 trẻ em"
+                ],
+                "price": 6200000
+            },
+            {
+                "id": "room-fla-03",
+                "type": "Glamping Tent – Lều sinh thái",
+                "bedInfo": "1 giường đôi lớn",
+                "capacity": 2,
+                "options": [
+                    "Hòa mình vào thiên nhiên rừng hồ",
+                    "Bãi đốt lửa trại riêng",
+                    "Bao gồm bữa sáng & bữa tối BBQ"
+                ],
+                "price": 2800000
             }
         ]
     },
@@ -280,6 +316,32 @@
                     "Miễn phí trẻ dưới 6 tuổi"
                 ],
                 "price": 12000000
+            },
+            {
+                "id": "room-icdn-02",
+                "type": "Ocean View Suite – Tầng Sky",
+                "bedInfo": "1 giường King lớn",
+                "capacity": 2,
+                "options": [
+                    "Tầm nhìn trực diện biển Đông & bán đảo Sơn Trà",
+                    "Bể tắm nằm kính panorama",
+                    "Bao gồm bữa sáng tại La Maison 1888",
+                    "Butler riêng phục vụ 24/7"
+                ],
+                "price": 28000000
+            },
+            {
+                "id": "room-icdn-03",
+                "type": "Beach Pool Villa – Tầng Sea",
+                "bedInfo": "1 giường King lớn",
+                "capacity": 2,
+                "options": [
+                    "Hồ bơi riêng lối ra bãi biển",
+                    "Sân vườn nhiệt đới riêng biệt",
+                    "Xe điện đưa đón trong khu resort",
+                    "Bao gồm toàn bộ bữa ăn & tiệc cocktail"
+                ],
+                "price": 55000000
             }
         ]
     },
@@ -338,6 +400,19 @@
                     "Bồn tắm sang trọng"
                 ],
                 "price": 6500000
+            },
+            {
+                "id": "room-met-02",
+                "type": "Grand Suite – Cánh Lịch Sử",
+                "bedInfo": "1 giường King lớn",
+                "capacity": 2,
+                "options": [
+                    "Phòng khách phong cách Pháp cổ điển",
+                    "Tầm nhìn ra vườn nội viện & hồ bơi",
+                    "Bao gồm bữa sáng & rượu vang chào mừng",
+                    "Ưu tiên đặt bàn tại Le Beaulieu"
+                ],
+                "price": 18500000
             }
         ]
     },
@@ -396,6 +471,19 @@
                     "Wifi tốc độ cao"
                 ],
                 "price": 3200000
+            },
+            {
+                "id": "room-lotte-02",
+                "type": "Sky Suite – Tầng Thượng",
+                "bedInfo": "1 giường King lớn",
+                "capacity": 2,
+                "options": [
+                    "Tầm nhìn 270° toàn thành phố & Hồ Tây",
+                    "Phòng khách riêng với sofa góc cạnh sàn kính",
+                    "Quyền sử dụng Club Lounge & minibar miễn phí",
+                    "Bao gồm bữa sáng & cocktail buổi tối"
+                ],
+                "price": 9800000
             }
         ]
     },
@@ -453,6 +541,32 @@
                     "View hồ & trung tâm hội nghị"
                 ],
                 "price": 4000000
+            },
+            {
+                "id": "room-jw-02",
+                "type": "Executive Suite",
+                "bedInfo": "1 giường King lớn",
+                "capacity": 2,
+                "options": [
+                    "Phòng khách riêng view hồ điều hành",
+                    "Quyền vào Executive Lounge suốt ngày",
+                    "Bao gồm bữa sáng, cocktail & bữa nhẹ buổi tối",
+                    "Dịch vụ ủi đồ miễn phí 1 lần/ngày"
+                ],
+                "price": 11500000
+            },
+            {
+                "id": "room-jw-03",
+                "type": "Family Room – 2 phòng ngủ",
+                "bedInfo": "1 giường King + 2 giường đơn",
+                "capacity": 4,
+                "options": [
+                    "Phòng ngủ phụ kết nối liền kề",
+                    "Khu vực tiếp khách & bàn ăn riêng",
+                    "Miễn phí giường phụ & bữa sáng cho trẻ dưới 12 tuổi",
+                    "Bao gồm bữa sáng buffet cho cả gia đình"
+                ],
+                "price": 9200000
             }
         ]
     },
@@ -500,6 +614,18 @@
                     "Hướng phố"
                 ],
                 "price": 750000
+            },
+            {
+                "id": "room-coz-02",
+                "type": "Superior Studio hướng sân trong",
+                "bedInfo": "1 giường đôi (Queen Size)",
+                "capacity": 2,
+                "options": [
+                    "Hướng sân trong yên tĩnh, thoáng mát",
+                    "Bếp đầy đủ nồi, bát, dụng cụ nấu ăn",
+                    "Tivi thông minh 43 inch"
+                ],
+                "price": 620000
             }
         ]
     },
@@ -553,6 +679,18 @@
                     "View thung lũng rừng thông"
                 ],
                 "price": 600000
+            },
+            {
+                "id": "room-kup-02",
+                "type": "Forest Room (Phòng Tầng Trệt Cạnh Rừng)",
+                "bedInfo": "1 giường đôi",
+                "capacity": 2,
+                "options": [
+                    "Cửa kính nhìn thẳng ra tán thông",
+                    "Tiếp cận trực tiếp khu vực bồn tắm gỗ & lửa trại",
+                    "Bao gồm cafe sáng miễn phí"
+                ],
+                "price": 480000
             }
         ]
     },
@@ -606,6 +744,19 @@
                     "Hướng phố"
                 ],
                 "price": 1100000
+            },
+            {
+                "id": "room-all-02",
+                "type": "Superior Double hướng phố cổ",
+                "bedInfo": "1 giường đôi lớn (Queen Size)",
+                "capacity": 2,
+                "options": [
+                    "Tầm nhìn thẳng ra phố Đào Duy Từ",
+                    "Bồn tắm nằm & vòi sen mưa",
+                    "Bao gồm bữa sáng buffet",
+                    "Két sắt & minibar"
+                ],
+                "price": 1450000
             }
         ]
     },
@@ -664,6 +815,19 @@
                     "Sân hiên"
                 ],
                 "price": 1300000
+            },
+            {
+                "id": "room-ule-02",
+                "type": "Family Bungalow – Nhà Rừng",
+                "bedInfo": "1 giường đôi lớn + 1 giường tầng",
+                "capacity": 4,
+                "options": [
+                    "Không gian nhà gỗ độc lập giữa vườn",
+                    "Sân trong riêng gần hồ bơi",
+                    "Trẻ em được vào sân chơi miễn phí",
+                    "Bao gồm bữa sáng & bữa tối cho cả gia đình"
+                ],
+                "price": 2800000
             }
         ]
     },
@@ -671,7 +835,7 @@
         "id": "september-garden-homestay",
         "name": "September Garden Homestay",
         "stars": 3,
-        "address": "19 Tổ Hồ Than Thở - Phường 12, Đà Lạt, Việt Nam",
+        "address": "19 Tổ Hồ Than Thở - Phường 12, Đà Lạt, Việt Nam",
         "city": "Đà Lạt",
         "country": "Việt Nam",
         "startingPrice": 730000,
@@ -718,6 +882,18 @@
                     "Ban công"
                 ],
                 "price": 730000
+            },
+            {
+                "id": "room-sep-02",
+                "type": "Garden Suite – Ban Công Rộng",
+                "bedInfo": "1 giường đôi lớn (Queen Size)",
+                "capacity": 2,
+                "options": [
+                    "Ban công rộng nhìn toàn cảnh đồi thông Hồ Than Thở",
+                    "Phòng tắm riêng với vòi sen nóng lạnh",
+                    "Quyền sử dụng bếp chung & khu BBQ ngoài vườn"
+                ],
+                "price": 980000
             }
         ]
     },
@@ -725,7 +901,7 @@
         "id": "vuon-nha-cui-homestay",
         "name": "Vườn Nhà Củi Homestay",
         "stars": 3,
-        "address": "58 Đường An Sơn, Đà Lạt, Việt Nam",
+        "address": "58 Đường An Sơn, Đà Lạt, Việt Nam",
         "city": "Đà Lạt",
         "country": "Việt Nam",
         "startingPrice": 563037,
@@ -741,11 +917,11 @@
         ],
         "amenities": [
             {
-                "label": "Cho phép mang theo vật nuôi",
+                "label": "Cho phép mang theo vật nuôi",
                 "icon": "Dog"
             },
             {
-                "label": "Tiện nghi BBQ",
+                "label": "Tiện nghi BBQ",
                 "icon": "Flame"
             },
             {
@@ -776,6 +952,19 @@
                     "Bếp chung"
                 ],
                 "price": 563037
+            },
+            {
+                "id": "room-vnc-02",
+                "type": "Phòng Family Thú Cưng – Sân Vườn Riêng",
+                "bedInfo": "1 giường đôi + 1 giường đơn phụ",
+                "capacity": 3,
+                "options": [
+                    "Sân vườn riêng cho thú cưng vui chơi thoải mái",
+                    "Tiếp cận trực tiếp khu BBQ & lò sưởi ngoài trời",
+                    "Cho phép mang theo tối đa 2 thú cưng miễn phí",
+                    "Bếp chung & khu picnic"
+                ],
+                "price": 850000
             }
         ]
     }
