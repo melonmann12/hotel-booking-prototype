@@ -41,7 +41,13 @@
             "label": "Xuất sắc",
             "reviewCount": 856
         },
-        "featuredReviews": [],
+        "featuredReviews": [
+            {
+                "userName": "Hồng Quân",
+                "date": "Tháng 2, 2025",
+                "comment": "Lần đầu mình được trải nghiệm một khách sạn tuyệt vời như vậy luôn á"
+            }
+        ],
         "rooms": [
             {
                 "id": "room-ssc-01",
@@ -77,7 +83,7 @@
         ],
         "amenities": [
             {
-                "label": "Hồ bơi vô cực (Tầng 41)",
+                "label": "Hồ bơi vô cực",
                 "icon": "Waves"
             },
             {
@@ -199,7 +205,13 @@
             "label": "Tuyệt vời",
             "reviewCount": 1250
         },
-        "featuredReviews": [],
+        "featuredReviews": [
+            {
+                "userName": "Minh Anh",
+                "date": "Tháng 2, 2025",
+                "comment": "Không gian quá đẹp, nhân viên siêu thân thiện, đồ ăn cực ngon. Chắc chắn sẽ quay lại!"
+            }
+        ],
         "rooms": [
             {
                 "id": "room-fla-01",
@@ -250,7 +262,13 @@
             "label": "Xuất sắc",
             "reviewCount": 11155
         },
-        "featuredReviews": [],
+        "featuredReviews": [
+            {
+                "userName": "Vũ Minh Ngọc",
+                "date": "Tháng 3, 2025",
+                "comment": "Lần đầu mình được trải nghiệm dịch vụ 5 sao"
+            }
+        ],
         "rooms": [
             {
                 "id": "room-icdn-01",
@@ -302,7 +320,13 @@
             "label": "Tuyệt vời",
             "reviewCount": 2800
         },
-        "featuredReviews": [],
+        "featuredReviews": [
+            {
+                "userName": "Trần Nhật Duy",
+                "date": "Tháng 3, 2025",
+                "comment": "Khách sạn cổ kính và sang trọng"
+            }
+        ],
         "rooms": [
             {
                 "id": "room-met-01",
@@ -354,7 +378,13 @@
             "label": "Tuyệt vời",
             "reviewCount": 4500
         },
-        "featuredReviews": [],
+        "featuredReviews": [
+            {
+                "userName": "Nguyễn Mai Phương",
+                "date": "Tháng 11, 2024",
+                "comment": "Khách sạn 5 saoView cực đỉnh, nhân viên siêu thân thiện, đồ ăn cực ngon."
+            }
+        ],
         "rooms": [
             {
                 "id": "room-lotte-01",
@@ -406,7 +436,13 @@
             "label": "Xuất sắc",
             "reviewCount": 3900
         },
-        "featuredReviews": [],
+        "featuredReviews": [
+            {
+                "userName": "Trần Minh Nhật",
+                "date": "Tháng 3, 2025",
+                "comment": "View phòng rất đẹp, tiện nghi đầy đủ"
+            }
+        ],
         "rooms": [
             {
                 "id": "room-jw-01",
@@ -430,7 +466,7 @@
         "startingPrice": 750000,
         "type": "Nhà nghỉ",
         "currency": "VNĐ",
-        "vrLink": "",
+        "vrLink": "https://cozrum.com/cho-thue-ngan-han-can-ho-dich-vu-phuong-cau-kho/cozrum-homes-saphera-residence?check_in=2026-05-08&check_out=2026-05-09&v_a_m=1&c_m=vr360",
         "description": "Nhà nghỉ cung cấp dịch vụ tự check-in bằng mã khóa và phòng hướng phố Quận 1 năng động. Các phòng đều có bếp nhỏ nấu ăn, điều hòa và Tivi thông minh.",
         "images": [
             "/images/hotels/cozrum-1.jpg",
@@ -500,7 +536,13 @@
             "label": "Tuyệt vời",
             "reviewCount": 210
         },
-        "featuredReviews": [],
+        "featuredReviews": [
+            {
+                "userName": "Lê Hoàng Hải",
+                "date": "Tháng 3, 2025",
+                "comment": "View phòng rất đẹp, tiện nghi đầy đủ"
+            }
+        ],
         "rooms": [
             {
                 "id": "room-kup-01",
@@ -547,7 +589,13 @@
             "label": "Tuyệt vời",
             "reviewCount": 340
         },
-        "featuredReviews": [],
+        "featuredReviews": [
+            {
+                "userName": "Thành Lâm",
+                "date": "Tháng 3, 2025",
+                "comment": "View phòng rất đẹp ạ"
+            }
+        ],
         "rooms": [
             {
                 "id": "room-all-01",
@@ -598,7 +646,13 @@
             "label": "Rất tốt",
             "reviewCount": 180
         },
-        "featuredReviews": [],
+        "featuredReviews": [
+            {
+                "userName": "Nguyễn Mai Phương",
+                "date": "Tháng 10, 2024",
+                "comment": "View phòng rất đẹp ạ"
+            }
+        ],
         "rooms": [
             {
                 "id": "room-ule-01",
@@ -646,7 +700,13 @@
             "label": "Tuyệt vời",
             "reviewCount": 120
         },
-        "featuredReviews": [],
+        "featuredReviews": [
+            {
+                "userName": "Trần Minh Nhật",
+                "date": "Tháng 3, 2026",
+                "comment": "Phòng rộng rãi, view cực chất"
+            }
+        ],
         "rooms": [
             {
                 "id": "room-sep-01",
@@ -698,7 +758,13 @@
             "label": "Rất tốt",
             "reviewCount": 95
         },
-        "featuredReviews": [],
+        "featuredReviews": [
+            {
+                "userName": "Thành Lâm",
+                "date": "Tháng 10, 2025",
+                "comment": "Không gian thoáng đãng, phòng ốc sạch sẽ, "
+            }
+        ],
         "rooms": [
             {
                 "id": "room-vnc-01",
