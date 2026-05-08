@@ -170,14 +170,14 @@ export default function SearchResultsClient({
           </div>
         ) : (
           /* Empty State */
-          <div className="flex flex-col items-center justify-center py-xxl text-center w-full min-h-[300px]">
+          <div className="flex flex-col items-center justify-center py-xxl w-full min-h-[300px]">
             <div className="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mb-lg">
               <SearchX className="w-10 h-10 text-on-surface-variant" />
             </div>
-            <h3 className="font-h2 text-h2 text-primary mb-sm">
+            <h3 className="font-h2 text-h2 text-primary mb-sm text-center">
               Không tìm thấy khách sạn
             </h3>
-            <p className="w-full max-w-md text-center font-body-lg text-body-lg text-on-surface-variant">
+            <p className="self-stretch max-w-md mx-auto px-4 text-center text-sm text-on-surface-variant">
               {hasActiveFilters
                 ? "Không có khách sạn nào phù hợp với bộ lọc đã chọn. Vui lòng điều chỉnh bộ lọc!"
                 : `Không tìm thấy khách sạn nào tại "${cityQuery.trim()}". Vui lòng thử lại với từ khóa khác!`}
