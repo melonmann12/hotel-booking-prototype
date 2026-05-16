@@ -172,6 +172,46 @@
                     "Bao gồm bữa sáng"
                 ],
                 "price": 1250000
+            },
+            {
+                "id": "rg-sdl-05",
+                "type": "Phòng Senior Deluxe Hướng Biển",
+                "bedInfo": "1 giường King hoặc 2 giường đơn",
+                "capacity": 2,
+                "options": [
+                    "Tầm nhìn trực diện ra biển Nha Trang",
+                    "Ban công riêng rộng rãi",
+                    "Bao gồm bữa sáng buffet",
+                    "Miễn phí set up trái cây tươi ngày nhận phòng"
+                ],
+                "price": 1650000
+            },
+            {
+                "id": "rg-apt-06",
+                "type": "Căn hộ 2 phòng ngủ (2-Bedroom Apartment)",
+                "bedInfo": "1 giường King và 2 giường đơn",
+                "capacity": 4,
+                "options": [
+                    "Khu vực bếp và bàn ăn đầy đủ tiện nghi",
+                    "Phòng khách sinh hoạt chung rộng rãi",
+                    "Máy giặt riêng trong phòng",
+                    "Bao gồm bữa sáng cho 4 người"
+                ],
+                "price": 5500000
+            },
+            {
+                "id": "rg-pre-07",
+                "type": "Phòng Tổng Thống (Presidential Suite)",
+                "bedInfo": "1 giường Super King",
+                "capacity": 2,
+                "options": [
+                    "Nằm ở tầng cao nhất với view panorama toàn vịnh",
+                    "Phòng khách, phòng làm việc và phòng ăn riêng biệt",
+                    "Bồn tắm sục Jacuzzi cao cấp",
+                    "Miễn phí đưa đón sân bay 2 chiều",
+                    "Dịch vụ quản gia riêng 24/7"
+                ],
+                "price": 18500000
             }
         ]
     },
