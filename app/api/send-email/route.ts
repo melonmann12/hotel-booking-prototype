@@ -197,6 +197,13 @@ function buildEmailHtml({
 
 export async function POST(req: NextRequest) {
   try {
+    // --- DEBUG (remove after confirming) ---
+    console.log('[send-email] GMAIL_USER:', process.env.GMAIL_USER);
+    console.log('[send-email] GMAIL_APP_PASSWORD length:', process.env.GMAIL_APP_PASSWORD?.length);
+    console.log('[send-email] GMAIL_APP_PASSWORD has non-ASCII:',
+      process.env.GMAIL_APP_PASSWORD ? /[^\x00-\x7F]/.test(process.env.GMAIL_APP_PASSWORD) : 'undefined'
+    );
+    // --- END DEBUG ---
     const body = await req.json();
     const { email, customerName, hotelName, checkIn, checkOut, totalPrice } = body;
 
