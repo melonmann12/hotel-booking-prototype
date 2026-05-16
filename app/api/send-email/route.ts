@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
 
 export const dynamic = 'force-dynamic';
@@ -197,7 +197,6 @@ function buildEmailHtml({
 
 export async function POST(req: NextRequest) {
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
     const body = await req.json();
     const { email, customerName, hotelName, checkIn, checkOut, totalPrice } = body;
 
@@ -209,23 +208,26 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { data, error } = await resend.emails.send({
-      from: "DeliBook <onboarding@resend.dev>",
-      to: [email],
+    // Configure Gmail SMTP transporter — credentials from environment variables only
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_APP_PASSWORD,
+      },
+    });
+
+    const info = await transporter.sendMail({
+      from: `"DeliBook" <${process.env.GMAIL_USER}>`,
+      to: email,
       subject: `✅ Xác nhận đặt phòng tại ${hotelName} – DeliBook`,
       html: buildEmailHtml({ customerName, hotelName, checkIn, checkOut, totalPrice }),
     });
 
-    if (error) {
-      console.error("[send-email] Resend error:", error);
-      return NextResponse.json(
-        { error: "Không thể gửi email. Vui lòng thử lại sau.", details: error },
-        { status: 500 }
-      );
-    }
+    console.log("[send-email] Message sent:", info.messageId);
 
     return NextResponse.json(
-      { success: true, message: "Email xác nhận đã được gửi thành công.", id: data?.id },
+      { success: true, message: "Email xác nhận đã được gửi thành công.", id: info.messageId },
       { status: 200 }
     );
   } catch (err) {
